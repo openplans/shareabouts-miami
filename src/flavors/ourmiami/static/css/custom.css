@@ -159,9 +159,9 @@ a.close-btn {
 -------------------------------------------------------------- */
 
 #colophon {
-  background-color: #fff;
+  background-color: #f4f6f8;
   color: #555;
-  box-shadow: none;
+  box-shadow: inset 0 5px 10px rgba(85, 85, 85, 0.25);
 }
 a.shareabouts-logo {
   color: #00aaff;
@@ -176,6 +176,22 @@ a.shareabouts-logo:hover {
 #powered-by a.openplans-logo:hover {
   color: #ff8b38;
   border-bottom: 1px solid #ffb885;
+}
+.footer-logos {
+  display: block;
+  text-align: center;
+}
+.footer-logo {
+  display: block;
+  margin: 1em auto;
+}
+.ourmiami-logo,
+.ioby-logo {
+  height: 3em;
+  width: auto;
+}
+.footer-logo .prompt {
+  display: none;
 }
 
 
@@ -219,6 +235,43 @@ a.shareabouts-logo:hover {
   }
   #colophon {
     box-shadow: 0 -5px 10px rgba(85, 85, 85, 0.5);
+    height: 3.75em;
+    padding: 0.5em;
+  }
+  #powered-by a.openplans-logo {
+    line-height: 3.75em;
+  }
+  #map-container,
+  #content {
+    bottom: 3.75em; /* match height of #colophon */
+  }
+  .footer-logos {
+    float: left;
+    display: block;
+    text-align: left;
+    height: 100%;
+  }
+  .footer-logo {
+    float: left;
+    position: relative;
+    height: 100%;
+    margin: 0;
+  }
+  .footer-logo:hover .prompt {
+    display: block;
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    font-size: 0.75em;
+    white-space: nowrap;
+    background: #f4f6f8;
+    margin-bottom: 0.5em;
+    padding: 0.5em 0.75em;
+  }
+  .footer-logo img {
+    width: auto;
+    height: 100%;
+    margin: 0 0.75em;
   }
 }
 
