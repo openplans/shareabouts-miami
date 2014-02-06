@@ -14,4 +14,33 @@
   Analytics, custom JS, and such go here
  -->
 {% block includes %}
+<script>
+(function(S) {
+  var placeRender = Shareabouts.PlaceDetailView.prototype.render;
+  Shareabouts.PlaceDetailView.prototype.render = function() {
+    var view = placeRender.call(this),
+        iobyId = this.model.get('ioby_id');
+
+    if (iobyId) {
+      $.ajax({
+        url: 'https://free-ec2.scraperwiki.com/b5pr75y/fd06f5327055496/sql/',
+        data: {
+          q: 'select * from swdata where id='+iobyId
+        },
+        dataType: 'jsonp',
+        success: function(data, status, xhr) {
+          var $template;
+          if (data && data.length) {
+            $template = $(Handlebars.templates['ioby-details'](data[0]));
+            view.$('.ioby-details').html($template)
+          }
+        }
+      });
+    }
+
+    return view;
+  }
+}(Shareabouts));
+
+</script>
 {% endblock %}
