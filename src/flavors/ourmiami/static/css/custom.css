@@ -1,0 +1,230 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400italic,800italic,400,800);
+
+/* =Typography
+-------------------------------------------------------------- */
+
+body, select, input, textarea {
+  font-family: 'Open Sans', sans-serif;
+}
+.openplans-logo {
+  font-family: "Helvetica Neue", Helvetica, sans-serif !important;
+}
+
+/* Links */
+a, a:active, a:visited {
+  color: #00afdb;
+}
+a:hover {
+  color: #0087a8;
+}
+
+#sign-in-btn {
+  color: #00afdb;
+}
+#sign-in-btn:hover {
+  color: #0087a8;
+}
+
+.drag-marker-instructions {
+  background-color: #7C4199;
+  color: #fff;
+  font-weight: 800;
+  text-shadow: none;
+}
+
+
+/* Buttons */
+.btn,
+.btn:visited,
+.btn:link {
+  font-weight: 400;
+  background-color: #dbef16;
+  color: #000;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+.btn:hover {
+  background-color: #00afdb;
+  color: #fff;
+}
+#add-place,
+#add-place:hover {
+  font-weight: 800;
+  box-shadow: -3px 3px 10px rgba(85, 85, 85, 0.5);
+}
+.submit-btn {
+  font-size: 1.25em;
+  padding: 0.5em 1em;
+}
+#user_support label {
+  color: #000;
+}
+#user_support:hover label {
+  background-color: #00afdb;
+  color: #fff;
+}
+
+/* Forms */
+input[type=text],
+textarea {
+  border-color: #bbb;
+}
+input:focus,
+textarea:focus {
+  border-color: #00afdb;
+}
+
+
+#add-place-btn-container {
+  background: #fff;
+  border-bottom: 0;
+}
+
+/* =Header
+-------------------------------------------------------------- */
+
+#site-header {
+  color: #181818;
+  background-color: #fff;
+  box-shadow: 0 5px 10px rgba(85, 85, 85, 0.5), inset 0 -3px 0 #00afdb, inset 0 3px 0 #dbef16;
+}
+
+/* Logo */
+#site-title {
+  height: 2.5em;
+  -webkit-box-sizing: border-box; 
+     -moz-box-sizing: border-box; 
+          box-sizing: border-box;
+}
+#site-title a {
+  height: 100%;
+  -webkit-box-sizing: border-box; 
+     -moz-box-sizing: border-box; 
+          box-sizing: border-box;
+}
+#site-logo {
+  height: 100%;
+  width: auto;
+}
+
+/* Navigation */
+#nav-btn {
+  font-family: "Helvetica Neue", Arial !important;
+  background: #eee;
+  color: #bbb;
+  text-shadow: none;
+}
+.access a:visited, 
+.access a:active, 
+.access a:link {
+  background: #dbef16; 
+  color: #181818;
+}
+
+
+/* =The Ticker
+-------------------------------------------------------------- */
+
+#ticker {
+  background: #fff url("http://ourmiami.org/wp-content/themes/engage/img/background.png") center bottom repeat scroll;
+  box-shadow: -5px 0 10px rgba(85, 85, 85, 0.5);
+}
+.recent-points a {
+  color: #00afdb;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #ddd;
+}
+.recent-points a:hover {
+  color: #fff;
+  background: #00afdb;
+  border-color: rgba(0,0,0,0.1);
+}
+
+
+/* =Content: Pages & Places
+-------------------------------------------------------------- */
+
+#content {
+  box-shadow: 0 -0.325em 0.325em rgba(0,0,0,0.25);
+}
+
+/* Close Button */
+a.close-btn {
+  box-shadow: 0 -0.325em 0.325em rgba(0,0,0,0.25);
+}
+
+
+/* =Footer
+-------------------------------------------------------------- */
+
+#colophon {
+  background-color: #fff;
+  color: #555;
+  box-shadow: none;
+}
+a.shareabouts-logo {
+  color: #00aaff;
+}
+a.shareabouts-logo:hover {
+  color: #007fbf;
+  border-bottom: 1px solid #00aaff;
+}
+#powered-by a.openplans-logo {
+  color: #ff9a52;
+}
+#powered-by a.openplans-logo:hover {
+  color: #ff8b38;
+  border-bottom: 1px solid #ffb885;
+}
+
+
+/* =Media Queries
+-------------------------------------------------------------- */
+
+@media only screen and (min-height: 440px) and (max-width: 60em) {
+}
+
+@media only screen and (min-height: 568px) and (max-width: 60em) {
+}
+
+@media only screen and (min-width: 768px) and (max-width: 60em) {
+}
+
+@media only screen and (min-width: 60em) {
+  #site-title {
+    height: 4em;
+  }
+  .access a:visited, 
+  .access a:active, 
+  .access a:link {
+    background: #fff; 
+  }
+  .access a:hover {
+    background: #dbef16; 
+  }
+  .sign-in-menu {
+    color: #ccc;
+    background: #333;
+    box-shadow: -5px 5px 10px rgba(85, 85, 85, 0.5);
+  }
+  .sign-in-menu:before {
+    border-bottom-color: #333;
+  }
+  #content {
+    box-shadow: -0.375em 0 0.325em rgba(0,0,0,0.25);
+  }
+  a.close-btn {
+    box-shadow: -0.375em 0.325em 0.125em rgba(0,0,0,0.25);
+  }
+  #colophon {
+    box-shadow: 0 -5px 10px rgba(85, 85, 85, 0.5);
+  }
+}
+
+@media only screen and (min-width: 80em) {
+}
+
+/* High Resolution Displays */
+@media only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2) {
+}
