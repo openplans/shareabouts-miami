@@ -1,0 +1,319 @@
+app:
+  title: OurMiami
+  name: OurMiami
+  meta_description: _('The Miami Foundation and our partners created the Our Miami Public Space Challenge to discover the best ideas for improving, creating, and activating local public spaces.')
+
+map:
+  geolocation_enabled: false
+  geolocation_onload: false
+  options:
+    center:
+      lat: 25.79571825588276
+      lng: -80.24002075195312
+    zoom: 12
+    minZoom: 10
+    maxZoom: 18
+  layers:
+    - url: http://{s}.tiles.mapbox.com/v3/openplans.map-jo9bww2s/{z}/{x}/{y}.png
+      attribution: '&copy; OpenStreetMap contributors, CC-BY-SA. <a href="http://mapbox.com/about/maps" target="_blank">Terms &amp; Feedback</a>'
+
+place_types:
+  ChildIdea:
+    label: _(Child or Senior Citizen Focused Idea)
+    rules:
+      - condition: '"{{location_type}}" === "ChildIdea"'
+        icon:
+          iconUrl: /static/css/images/markers/dot-70d52c.png
+          iconSize: [17, 18]
+          iconAnchor: [9, 9]
+        focus_icon:
+          iconUrl: /static/css/images/markers/marker-70d52c.png
+          shadowUrl: /static/css/images/marker-shadow.png
+          iconSize: [25, 41]
+          shadowSize: [41, 41]
+          iconAnchor: [12, 41]
+
+  CommunityGatheringSpace:
+    label: _(Community Gathering Space)
+    rules:
+      - condition: '"{{location_type}}" === "CommunityGatheringSpace"'
+        icon:
+          iconUrl: /static/css/images/markers/dot-2654d2.png
+          iconSize: [17, 18]
+          iconAnchor: [9, 9]
+        focus_icon:
+          iconUrl: /static/css/images/markers/marker-2654d2.png
+          shadowUrl: /static/css/images/marker-shadow.png
+          iconSize: [25, 41]
+          shadowSize: [41, 41]
+          iconAnchor: [12, 41]
+
+  ExistingPlaceMakeover:
+    label: _(Existing Place Makeover)
+    rules:
+      - condition: '"{{location_type}}" === "ExistingPlaceMakeover"'
+        icon:
+          iconUrl: /static/css/images/markers/dot-dbcf2c.png
+          iconSize: [17, 18]
+          iconAnchor: [9, 9]
+        focus_icon:
+          iconUrl: /static/css/images/markers/marker-dbcf2c.png
+          shadowUrl: /static/css/images/marker-shadow.png
+          iconSize: [25, 41]
+          shadowSize: [41, 41]
+          iconAnchor: [12, 41]
+  GardenFarmersMarket:
+    label: _(Garden/Farmer's Market/Healthy Eating)    
+    rules:
+      - condition: '"{{location_type}}" === "GardenFarmersMarket"'
+        icon:
+          iconUrl: /static/css/images/markers/dot-e1264d.png
+          iconSize: [17, 18]
+          iconAnchor: [9, 9]
+        focus_icon:
+          iconUrl: /static/css/images/markers/marker-e1264d.png
+          shadowUrl: /static/css/images/marker-shadow.png
+          iconSize: [25, 41]
+          shadowSize: [41, 41]
+          iconAnchor: [12, 41]
+  NightFocusedIdea:
+    label: _(Night Focused Idea)
+    rules:
+      - condition: '"{{location_type}}" === "NightFocusedIdea"'
+        icon:
+          iconUrl: /static/css/images/markers/dot-744edc.png
+          iconSize: [17, 18]
+          iconAnchor: [9, 9]
+        focus_icon:
+          iconUrl: /static/css/images/markers/marker-744edc.png
+          shadowUrl: /static/css/images/marker-shadow.png
+          iconSize: [25, 41]
+          shadowSize: [41, 41]
+          iconAnchor: [12, 41]
+  ParkParkletPlaza:
+    label: _(Park/Parklet/Plaza)
+    rules:
+      - condition: '"{{location_type}}" === "ParkParkletPlaza"'
+        icon:
+          iconUrl: /static/css/images/markers/triangle-2654d2.png
+          iconSize: [17, 18]
+          iconAnchor: [9, 9]
+        focus_icon:
+          iconUrl: /static/css/images/markers/marker-2654d2.png
+          shadowUrl: /static/css/images/marker-shadow.png
+          iconSize: [25, 41]
+          shadowSize: [41, 41]
+          iconAnchor: [12, 41]
+  PublicWaterfront:
+    label: _(Public Waterfront)
+    rules:
+      - condition: '"{{location_type}}" === "PublicWaterfront"'
+        icon:
+          iconUrl: /static/css/images/markers/triangle-dbcf2c.png
+          iconSize: [17, 18]
+          iconAnchor: [9, 9]
+        focus_icon:
+          iconUrl: /static/css/images/markers/marker-dbcf2c.png
+          shadowUrl: /static/css/images/marker-shadow.png
+          iconSize: [25, 41]
+          shadowSize: [41, 41]
+          iconAnchor: [12, 41]
+  SafeStreets:
+    label: _(Safe Streets)    
+    rules:
+      - condition: '"{{location_type}}" === "SafeStreets"'
+        icon:
+          iconUrl: /static/css/images/markers/triangle-e1264d.png
+          iconSize: [17, 18]
+          iconAnchor: [9, 9]
+        focus_icon:
+          iconUrl: /static/css/images/markers/marker-e1264d.png
+          shadowUrl: /static/css/images/marker-shadow.png
+          iconSize: [25, 41]
+          shadowSize: [41, 41]
+          iconAnchor: [12, 41]
+  ShadePublicComfort:
+    label: _(Shade and Public Comfort)
+    rules:
+      - condition: '"{{location_type}}" === "ShadePublicComfort"'
+        icon:
+          iconUrl: /static/css/images/markers/triangle-744edc.png
+          iconSize: [17, 18]
+          iconAnchor: [9, 9]
+        focus_icon:
+          iconUrl: /static/css/images/markers/marker-744edc.png
+          shadowUrl: /static/css/images/marker-shadow.png
+          iconSize: [25, 41]
+          shadowSize: [41, 41]
+          iconAnchor: [12, 41]
+  PhysicalActivity:
+    label: _(Physical Activity/Exercise)
+    rules:
+      - condition: '"{{location_type}}" === "PhysicalActivity"'
+        icon:
+          iconUrl: /static/css/images/markers/triangle-4ab767.png
+          iconSize: [17, 18]
+          iconAnchor: [9, 9]
+        focus_icon:
+          iconUrl: /static/css/images/markers/marker-4ab767.png
+          shadowUrl: /static/css/images/marker-shadow.png
+          iconSize: [25, 41]
+          shadowSize: [41, 41]
+          iconAnchor: [12, 41]
+  Crowdfunded:
+    label: _(Idea Being Crowdfunded)
+    rules:
+      - condition: '"{{location_type}}" === "Crowdfunded"'
+        icon:
+          iconUrl: /static/css/images/markers/dot-fa307d.png
+          iconSize: [17, 18]
+          iconAnchor: [9, 9]
+        focus_icon:
+          iconUrl: /static/css/images/markers/marker-fa307d.png
+          shadowUrl: /static/css/images/marker-shadow.png
+          iconSize: [25, 41]
+          shadowSize: [41, 41]
+          iconAnchor: [12, 41]
+
+activity:
+  enabled: true
+  interval: 30000
+
+place:
+  adding_supported: true
+  add_button_label: _(Add an idea)
+  action_text: _(suggested)
+  title: _(Tell us more...)
+  action_text: _(suggested)
+  anonymous_name: _(Someone)
+  submit_button_label: _(Post it to the map)
+  items:
+    - prompt: _(My idea to improve this place... (required))
+      type: textarea
+      name: description
+      optional: false
+      label: _(My idea to improve this place...)
+      attrs:
+        - key: placeholder
+          value: _(...short term, low cost, block focused, all street scale or smaller ideas welcome...)
+        - key: required
+          value: required
+    - prompt: _(So that people could... (required))
+      type: textarea
+      name: details
+      optional: false
+      label: _(So that people could...)
+      attrs:
+        - key: placeholder
+          value: _(Tell us why this idea would help make our Miami better)
+        - key: required
+          value: required
+    - prompt: _(Idea type (Required))
+      label: _(Idea type)
+      type: select
+      options:
+        - label: _(please choose)
+          value: ""
+        - label: _(Child or Senior Citizen Focused Idea)
+          value: ChildIdea
+        - label: _(Community Gathering Space)
+          value: CommunityGatheringSpace
+        - label: _(Existing Place Makeover)
+          value: ExistingPlaceMakeover
+        - label: _(Garden/Farmer's Market/Healthy Eating)
+          value: GardenFarmersMarket
+        - label: _(Night Focused Idea)
+          value: NightFocusedIdea
+        - label: _(Park/Parklet/Plaza)
+          value: ParkParkletPlaza
+        - label: _(Physical Activity/Exercise)
+          value: PhysicalActivity
+        - label: _(Public Waterfront)
+          value: PublicWaterfront
+        - label: _(Safe Streets)
+          value: SafeStreets
+        - label: _(Shade and Public Comfort)
+          value: ShadePublicComfort
+      attrs:
+      - key: required
+        value: required         
+      name: location_type
+    - prompt: _(Your Name)
+      label: _(Suggested by)
+      type: text
+      name: submitter_name
+      attrs:
+        - key: placeholder
+          value: _(Your or your organization's name will get credit for your idea publically)
+        - key: size
+          value: 30
+    - prompt: _(Your email (required))
+      type: email
+      optional: false
+      name: private-email
+      attrs:
+        - key: placeholder
+          value: _(Your email will not be shown publicly)
+        - key: size
+          value: 30
+        - key: required
+          value: required
+    - prompt: _(Show us with a picture)
+      inputfile_label: _(Upload an image)
+      type: file
+      name: my_image
+      attrs:
+        - key: accept
+          value: image/*
+    - prompt: _(Add a link)
+      type: text
+      name: infolink
+      attrs:
+        - key: placeholder
+          value: _(Add a link to page related to your idea, e.g. more info about it, or an example)
+        - key: size
+          value: 30
+    - type: hidden
+      name: private-conf
+      attrs:
+        - key: value
+          value: "Not sent"
+
+survey:
+  submission_type: comments
+
+  # Response config
+  show_responses: true
+  response_name: _(comment)
+  response_plural_name: _(comments)
+  action_text: _(commented on)
+  anonymous_name: _(Someone)
+
+  # Survey form config
+  title: _(Leave a Comment)
+  form_link_text: _(Leave a Comment)
+  submit_btn_text: _(Comment)
+  items:
+    - prompt: _(Comment)
+      label: _(Comment)
+      type: textarea
+      name: comment
+      attrs:
+        - key: required
+    - prompt: _(Your Name)
+      type: text
+      name: submitter_name
+
+support:
+  submission_type: support
+  submit_btn_text: _(Like This!)
+  action_text: liked
+  anonymous_name: _(Someone)
+
+pages:
+  - title: _(About)
+    slug: about
+    name: overview
+  - title: _(Contact us)
+    slug: contact
+    name: features
