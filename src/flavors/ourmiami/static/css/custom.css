@@ -31,7 +31,9 @@ a:hover {
   font-weight: 800;
   text-shadow: none;
 }
-
+.drag-marker-instructions + h4 {
+  display: none;
+}
 
 /* Buttons */
 .btn,
@@ -66,15 +68,53 @@ a:hover {
 }
 
 /* Forms */
+input[type=date],
+input[type=datetime],
+input[type=datetime-local],
+input[type=email],
+input[type=month],
+input[type=number],
+input[type=password],
+input[type=tel],
 input[type=text],
+input[type=time],
+input[type=url],
+input[type=week],
 textarea {
-  border-color: #bbb;
+  border: 3px solid #fff;
+  background-color: #ebebeb;
+  box-shadow: inset 0px 0px 5px rgba(0,0,0,0.25);
+  border-radius: 6px;
+  color: #181818;
 }
-input:focus,
+input[type=date]:focus,
+input[type=datetime]:focus,
+input[type=datetime-local]:focus,
+input[type=email]:focus,
+input[type=month]:focus,
+input[type=number]:focus,
+input[type=password]:focus,
+input[type=tel]:focus,
+input[type=text]:focus,
+input[type=time]:focus,
+input[type=url]:focus,
+input[type=week]:focus,
 textarea:focus {
-  border-color: #00afdb;
+  background-color: #777;
+  box-shadow: 0px 0px 5px rgba(0,0,0,0.5) inset;
+  color: #fff;
+  outline: 0;
 }
-
+label {
+  color: #555;
+  font-weight: 800;
+}
+#place-submitter_name + .or-sign-in {
+  font-size: 0.75em;
+}
+#place-submitter_name + .or-sign-in > .twitter-btn {
+  margin-left: 0.375em;
+}
 
 #add-place-btn-container {
   background: #fff;

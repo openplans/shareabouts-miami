@@ -188,17 +188,37 @@ place:
   anonymous_name: _(Someone)
   submit_button_label: _(Post it to the map)
   items:
-    - prompt: _(My idea to improve this place... (required))
+    - prompt: _(Name)
+      label: _(Suggested by)
+      type: text
+      name: submitter_name
+      attrs:
+        - key: placeholder
+          value: _(Person/Org to be credited for idea)
+        - key: size
+          value: 30
+    - prompt: _(* Your email)
+      type: email
+      optional: false
+      name: private-email
+      attrs:
+        - key: placeholder
+          value: _(Email will not be shown publicly)
+        - key: size
+          value: 30
+        - key: required
+          value: required
+    - prompt: _(* My idea to improve this place...)
       type: textarea
       name: description
       optional: false
       label: _(My idea to improve this place...)
       attrs:
         - key: placeholder
-          value: _(...short term, low cost, block focused, all street scale or smaller ideas welcome...)
+          value: _(Short term, low cost, block focused, all street scale or smaller ideas welcome)
         - key: required
           value: required
-    - prompt: _(So that people could... (required))
+    - prompt: _(* So that people could...)
       type: textarea
       name: details
       optional: false
@@ -208,11 +228,11 @@ place:
           value: _(Tell us why this idea would help make our Miami better)
         - key: required
           value: required
-    - prompt: _(Idea type (Required))
+    - prompt: _(* Idea type)
       label: _(Idea type)
       type: select
       options:
-        - label: _(please choose)
+        - label: _(Please choose...)
           value: ""
         - label: _(Child or Senior Citizen Focused Idea)
           value: ChildIdea
@@ -238,26 +258,6 @@ place:
       - key: required
         value: required         
       name: location_type
-    - prompt: _(Your Name)
-      label: _(Suggested by)
-      type: text
-      name: submitter_name
-      attrs:
-        - key: placeholder
-          value: _(Your or your organization's name will get credit for your idea publically)
-        - key: size
-          value: 30
-    - prompt: _(Your email (required))
-      type: email
-      optional: false
-      name: private-email
-      attrs:
-        - key: placeholder
-          value: _(Your email will not be shown publicly)
-        - key: size
-          value: 30
-        - key: required
-          value: required
     - prompt: _(Show us with a picture)
       inputfile_label: _(Upload an image)
       type: file
@@ -270,7 +270,7 @@ place:
       name: infolink
       attrs:
         - key: placeholder
-          value: _(Add a link to page related to your idea, e.g. more info about it, or an example)
+          value: _(Add a related link (an example or more info))
         - key: size
           value: 30
     - type: hidden
