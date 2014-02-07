@@ -111,6 +111,7 @@ label {
 }
 #place-submitter_name + .or-sign-in {
   font-size: 0.75em;
+  display: none;
 }
 #place-submitter_name + .or-sign-in > .twitter-btn {
   margin-left: 0.375em;
