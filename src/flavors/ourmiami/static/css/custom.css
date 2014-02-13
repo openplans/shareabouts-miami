@@ -235,6 +235,10 @@ h1.my-idea-is {
 h1.my-idea-is a {
   text-decoration: none;
 }
+.place-label {
+  font-size: 0.75em;
+  text-transform: uppercase;
+}
 
 /* List View */
 .place-list .place-submission-details {
