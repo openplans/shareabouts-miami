@@ -17,10 +17,10 @@ var Shareabouts = Shareabouts || {};
 
     render: function() {
       var self = this,
-          user = S.bootstrapped.currentUser || {'roles': []},
-          role = _.find(user.roles, function(role) { return _.isEqual(role, {'dataset': S.bootstrapped.datasetUrl, 'name': 'judges'}); });
+          user = S.bootstrapped.currentUser || {'groups': []},
+          group = _.find(user.groups, function(group) { return _.isEqual(group, {'dataset': S.bootstrapped.datasetUrl, 'name': 'judges'}); });
 
-      if (!user || !role) { return this; }
+      if (!user || !group) { return this; }
 
       // I don't understand why we need to redelegate the event here, but they
       // are definitely unbound after the first render.
