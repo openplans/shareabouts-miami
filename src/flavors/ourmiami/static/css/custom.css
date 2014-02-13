@@ -196,6 +196,7 @@ a.close-btn {
   box-shadow: 0 -0.325em 0.325em rgba(0,0,0,0.25);
 }
 
+/* ioby stuff */
 .ioby-details {
   background: url(http://ourmiami.org/wp-content/themes/engage/img/bg-border-lined-dots.png) left top repeat;
   margin-bottom: 1.5em;
@@ -222,6 +223,24 @@ a.close-btn {
      -moz-box-sizing: border-box; 
           box-sizing: border-box;
 }
+
+/* Place Details */
+.place-header {
+  margin-bottom: 0;
+}
+h1.my-idea-is {
+  font-size: 1.375em;
+  margin-bottom: 0.75em;
+}
+h1.my-idea-is a {
+  text-decoration: none;
+}
+
+/* List View */
+.place-list .place-submission-details {
+  margin-top: 0;
+}
+
 
 /* =Footer
 -------------------------------------------------------------- */
