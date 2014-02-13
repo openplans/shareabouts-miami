@@ -263,6 +263,32 @@ a.shareabouts-logo:hover {
 }
 
 
+/* =Rating, Voting, Judges
+-------------------------------------------------------------- */
+
+.rating {
+  float: right;
+  margin-bottom: 0.75em;
+}
+button.star {
+  border: 0;
+  background: transparent;
+  padding: 0.125em;
+  margin: 0;
+  color: #ccc;
+}
+button.star.is-full {
+  color: #F5C400;
+}
+button.star.is-empty {}
+button.star.is-full:hover {
+  color: #F5A400;
+}
+button.star.is-empty:hover {
+  color: #F5C400;
+}
+
+
 /* =Media Queries
 -------------------------------------------------------------- */
 
