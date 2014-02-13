@@ -34,7 +34,7 @@
   /*
    * Patch initializers to construct a rating view.
    */
-  var initializeRatingsView = function() {
+  var initializeRatingView = function() {
     this.model.submissionSets['ratings'] = this.model.submissionSets['ratings'] ||
       new S.SubmissionCollection(null, {
         submissionType: 'ratings',
@@ -43,22 +43,20 @@
 
     this.ratingView = new Shareabouts.RatingView({
       collection: this.model.submissionSets['ratings'],
-      userToken: this.options.userToken
+      userToken: S.Config.userToken
     });
   }
 
   var placeDetailInitialize = Shareabouts.PlaceDetailView.prototype.initialize;
   Shareabouts.PlaceDetailView.prototype.initialize = function() {
     placeDetailInitialize.call(this);
-    initializeRatingsView.call(this)
+    initializeRatingView.call(this)
   }
-  
-  Shareabouts.PlaceListItemView.prototype.regions['rating'] = '.rating'
   
   var placeListItemInitialize = Shareabouts.PlaceListItemView.prototype.initialize;
   Shareabouts.PlaceListItemView.prototype.initialize = function() {
     placeListItemInitialize.call(this);
-    initializeRatingsView.call(this);
+    initializeRatingView.call(this);
   }
 
   /*
@@ -96,6 +94,7 @@
   }
 
   var placeListItemOnRender = Shareabouts.PlaceListItemView.prototype.onRender;
+  Shareabouts.PlaceListItemView.prototype.regions['rating'] = '.rating'
   Shareabouts.PlaceListItemView.prototype.onRender = function(evt) {
     placeListItemOnRender.call(this, evt);
     this.rating.show(this.ratingView);
