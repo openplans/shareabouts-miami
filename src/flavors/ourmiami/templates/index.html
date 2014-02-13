@@ -29,6 +29,8 @@
 <script src="{{STATIC_URL}}js/views/rating-view.js"></script>
 <script>
 (function(S) {
+  S.bootstrapped.datasetUrl = '{{DATASET_ROOT|slice:":-1"}}';
+
   /*
    * Patch initialize to construct a rating view.
    */
