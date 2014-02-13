@@ -26,13 +26,42 @@
   Analytics, custom JS, and such go here
  -->
 {% block includes %}
+<script src="{{STATIC_URL}}js/views/rating-view.js"></script>
 <script>
 (function(S) {
+  /*
+   * Patch initialize to construct a rating view.
+   */
+  var placeInitialize = Shareabouts.PlaceDetailView.prototype.initialize;
+  Shareabouts.PlaceDetailView.prototype.initialize = function() {
+    placeInitialize.call(this);
+
+    this.model.submissionSets['ratings'] = this.model.submissionSets['ratings'] ||
+      new S.SubmissionCollection(null, {
+        submissionType: 'ratings',
+        placeModel: this.model
+      });
+
+    this.ratingView = new Shareabouts.RatingView({
+      collection: this.model.submissionSets['ratings'],
+      userToken: this.options.userToken
+    });
+  }
+  
+  /*
+   * Patch render to render ratings and ioby data.
+   */
   var placeRender = Shareabouts.PlaceDetailView.prototype.render;
   Shareabouts.PlaceDetailView.prototype.render = function() {
     var view = placeRender.call(this),
         iobyId = this.model.get('ioby_id');
 
+    // Render the rating view, as we do the support and survey views
+    this.$('.rating').html(this.ratingView.render().$el);
+    // Fetch for submissions and automatically update the element
+    this.model.submissionSets['ratings'].fetchAllPages();
+
+    // Render the associated data from ioby
     if (iobyId) {
       $.ajax({
         url: 'https://free-ec2.scraperwiki.com/b5pr75y/fd06f5327055496/sql/',
@@ -52,6 +81,7 @@
 
     return view;
   }
+
 }(Shareabouts));
 
 </script>

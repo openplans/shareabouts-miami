@@ -1,0 +1,13 @@
+    <form class="user-rating" action="#" method="post" class="btn btn-block btn-small">
+      <input type="hidden" name="user_token" value="{{{ user_token }}}">
+      <input type="hidden" name="visible" value="true">
+      <input type="hidden" name="rating" value="{{ user_rating }}">
+
+      <div class="stars">
+        {{# is_star_filled 1 }}<button type="button" class="star rating-value-1 is-full">&#9733;</button>{{^}}<button type="button" class="star rating-value-1 is-empty">&#9734;</button>{{/ is_star_filled }}
+        {{# is_star_filled 2 }}<button type="button" class="star rating-value-2 is-full">&#9733;</button>{{^}}<button type="button" class="star rating-value-2 is-empty">&#9734;</button>{{/ is_star_filled }}
+        {{# is_star_filled 3 }}<button type="button" class="star rating-value-3 is-full">&#9733;</button>{{^}}<button type="button" class="star rating-value-3 is-empty">&#9734;</button>{{/ is_star_filled }}
+        {{# is_star_filled 4 }}<button type="button" class="star rating-value-4 is-full">&#9733;</button>{{^}}<button type="button" class="star rating-value-4 is-empty">&#9734;</button>{{/ is_star_filled }}
+        {{# is_star_filled 5 }}<button type="button" class="star rating-value-5 is-full">&#9733;</button>{{^}}<button type="button" class="star rating-value-5 is-empty">&#9734;</button>{{/ is_star_filled }}
+      </div>
+    </form>
