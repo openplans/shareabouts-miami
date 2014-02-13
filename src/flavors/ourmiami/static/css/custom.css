@@ -59,10 +59,11 @@ a:hover {
   font-size: 1.25em;
   padding: 0.5em 1em;
 }
-#user_support label {
+.user-support label {
   color: #000;
+  font-weight: 400;
 }
-#user_support:hover label {
+.user-support:hover label {
   background-color: #00afdb;
   color: #fff;
 }
