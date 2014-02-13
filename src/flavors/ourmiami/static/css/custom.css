@@ -59,10 +59,11 @@ a:hover {
   font-size: 1.25em;
   padding: 0.5em 1em;
 }
-#user_support label {
+.user-support label {
   color: #000;
+  font-weight: 400;
 }
-#user_support:hover label {
+.user-support:hover label {
   background-color: #00afdb;
   color: #fff;
 }
@@ -195,21 +196,21 @@ a.close-btn {
   box-shadow: 0 -0.325em 0.325em rgba(0,0,0,0.25);
 }
 
+/* ioby stuff */
 .ioby-details {
-/*  border: 0.125em solid #7C4199;*/
-/*  border-radius: 0.5em;*/
   background: url(http://ourmiami.org/wp-content/themes/engage/img/bg-border-lined-dots.png) left top repeat;
-  padding: 5px 5px 0 5px;
   margin-bottom: 1.5em;
 }
 .ioby-project-title {
   background-color: #fff;
-/*  font-size: 1em;*/
   padding: 10px;
-  margin-bottom: 5px;
+  margin: 0 5px 10px 5px;
+  position: relative;
+  top: 5px;
 }
 .ioby-funding-info {
   margin: 0;
+  padding: 0 5px;
   text-transform: uppercase;
 }
 .ioby-funding-info > span {
@@ -222,6 +223,28 @@ a.close-btn {
      -moz-box-sizing: border-box; 
           box-sizing: border-box;
 }
+
+/* Place Details */
+.place-header {
+  margin-bottom: 0;
+}
+h1.my-idea-is {
+  font-size: 1.375em;
+  margin-bottom: 0.75em;
+}
+h1.my-idea-is a {
+  text-decoration: none;
+}
+.place-label {
+  font-size: 0.75em;
+  text-transform: uppercase;
+}
+
+/* List View */
+.place-list .place-submission-details {
+  margin-top: 0;
+}
+
 
 /* =Footer
 -------------------------------------------------------------- */
@@ -260,6 +283,49 @@ a.shareabouts-logo:hover {
 }
 .footer-logo .prompt {
   display: none;
+}
+
+
+/* =Rating, Voting, Judges
+-------------------------------------------------------------- */
+
+.rating {
+  float: right;
+  margin-bottom: 0.75em;
+}
+button.star {
+  border: 0;
+  background: transparent;
+  padding: 0.125em;
+  margin: 0;
+  color: #ccc;
+}
+button.star.is-full {
+  color: #F5C400;
+}
+button.star.is-empty {}
+button.star.is-full:hover {
+  color: #F5A400;
+}
+button.star.is-empty:hover {
+  color: #F5C400;
+}
+
+@-webkit-keyframes pulse {
+	0% { color: rgba(0,0,0,0.2); }
+	50% { color: rgba(0,0,0,0.1); }
+	100% { color: rgba(0,0,0,0.2); }
+}
+@keyframes pulse {
+	0% { color: rgba(0,0,0,0.2); }
+	50% { color: rgba(0,0,0,0.1); }
+	100% { color: rgba(0,0,0,0.2); }
+}
+button.star.is-empty:disabled,
+button.star.is-full:disabled {
+  color: #ddd;
+  -webkit-animation: pulse 1s infinite ease-in-out;
+          animation: pulse 1s infinite ease-in-out;
 }
 
 

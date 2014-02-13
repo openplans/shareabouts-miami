@@ -26,13 +26,53 @@
   Analytics, custom JS, and such go here
  -->
 {% block includes %}
+<script src="{{STATIC_URL}}js/views/rating-view.js"></script>
 <script>
 (function(S) {
+  S.bootstrapped.datasetUrl = '{{DATASET_ROOT|slice:":-1"}}';
+
+  /*
+   * Patch initializers to construct a rating view.
+   */
+  var initializeRatingView = function() {
+    this.model.submissionSets['ratings'] = this.model.submissionSets['ratings'] ||
+      new S.SubmissionCollection(null, {
+        submissionType: 'ratings',
+        placeModel: this.model
+      });
+
+    this.ratingView = new Shareabouts.RatingView({
+      collection: this.model.submissionSets['ratings'],
+      userToken: S.Config.userToken
+    });
+  }
+
+  var placeDetailInitialize = Shareabouts.PlaceDetailView.prototype.initialize;
+  Shareabouts.PlaceDetailView.prototype.initialize = function() {
+    placeDetailInitialize.call(this);
+    initializeRatingView.call(this)
+  }
+  
+  var placeListItemInitialize = Shareabouts.PlaceListItemView.prototype.initialize;
+  Shareabouts.PlaceListItemView.prototype.initialize = function() {
+    placeListItemInitialize.call(this);
+    initializeRatingView.call(this);
+  }
+
+  /*
+   * Patch render to render ratings and ioby data.
+   */
   var placeRender = Shareabouts.PlaceDetailView.prototype.render;
   Shareabouts.PlaceDetailView.prototype.render = function() {
     var view = placeRender.call(this),
         iobyId = this.model.get('ioby_id');
 
+    // Render the rating view, as we do the support and survey views
+    this.$('.rating').html(this.ratingView.render().$el);
+    // Fetch for submissions and automatically update the element
+    this.model.submissionSets['ratings'].fetchAllPages();
+
+    // Render the associated data from ioby
     if (iobyId) {
       $.ajax({
         url: 'https://free-ec2.scraperwiki.com/b5pr75y/fd06f5327055496/sql/',
@@ -52,6 +92,24 @@
 
     return view;
   }
+
+  var placeListItemOnRender = Shareabouts.PlaceListItemView.prototype.onRender;
+  Shareabouts.PlaceListItemView.prototype.regions['rating'] = '.rating'
+  Shareabouts.PlaceListItemView.prototype.onRender = function(evt) {
+    placeListItemOnRender.call(this, evt);
+    this.rating.show(this.ratingView);
+  }
+
+  var placeRenderList = Shareabouts.PlaceListView.prototype.renderList;
+  Shareabouts.PlaceListView.prototype.renderList = function() {
+    var view = placeRenderList.call(this);
+    this.collection.each(function(model) {
+      // Delegate the events so that the subviews still work
+      this.views[model.cid].ratingView.delegateEvents();
+    }, this);
+    return view;
+  }
+
 }(Shareabouts));
 
 </script>
