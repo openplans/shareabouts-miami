@@ -32,7 +32,7 @@
   S.bootstrapped.datasetUrl = '{{DATASET_ROOT|slice:":-1"}}';
 
   /*
-   * Patch initialize to construct a rating view.
+   * Patch initializers to construct a rating view.
    */
   var initializeRatingsView = function() {
     this.model.submissionSets['ratings'] = this.model.submissionSets['ratings'] ||
@@ -59,12 +59,6 @@
   Shareabouts.PlaceListItemView.prototype.initialize = function() {
     placeListItemInitialize.call(this);
     initializeRatingsView.call(this);
-  }
-
-  var placeListItemOnRender = Shareabouts.PlaceListItemView.prototype.onRender;
-  Shareabouts.PlaceListItemView.prototype.onRender = function(evt) {
-    placeListItemOnRender.call(this, evt);
-    this.rating.show(this.ratingView);
   }
 
   /*
@@ -99,6 +93,12 @@
     }
 
     return view;
+  }
+
+  var placeListItemOnRender = Shareabouts.PlaceListItemView.prototype.onRender;
+  Shareabouts.PlaceListItemView.prototype.onRender = function(evt) {
+    placeListItemOnRender.call(this, evt);
+    this.rating.show(this.ratingView);
   }
 
   var placeRenderList = Shareabouts.PlaceListView.prototype.renderList;
