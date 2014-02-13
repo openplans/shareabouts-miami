@@ -289,6 +289,23 @@ button.star.is-empty:hover {
   color: #F5C400;
 }
 
+@-webkit-keyframes pulse {
+	0% { color: rgba(0,0,0,0.2); }
+	50% { color: rgba(0,0,0,0.1); }
+	100% { color: rgba(0,0,0,0.2); }
+}
+@keyframes pulse {
+	0% { color: rgba(0,0,0,0.2); }
+	50% { color: rgba(0,0,0,0.1); }
+	100% { color: rgba(0,0,0,0.2); }
+}
+button.star.is-empty:disabled,
+button.star.is-full:disabled {
+  color: #ddd;
+  -webkit-animation: pulse 1s infinite ease-in-out;
+          animation: pulse 1s infinite ease-in-out;
+}
+
 
 /* =Media Queries
 -------------------------------------------------------------- */
