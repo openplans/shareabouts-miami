@@ -20,7 +20,7 @@ var Shareabouts = Shareabouts || {};
           user = S.bootstrapped.currentUser || {'roles': []},
           role = _.find(user.roles, function(role) { return _.isEqual(role, {'dataset': S.bootstrapped.datasetUrl, 'name': 'judges'}); });
 
-      // if (!user || !role) { return this; }
+      if (!user || !role) { return this; }
 
       // I don't understand why we need to redelegate the event here, but they
       // are definitely unbound after the first render.
