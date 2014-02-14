@@ -1,7 +1,9 @@
         {{> place-detail-promotion-bar }}
 
         <header class="place-header clearfix">
-          <!-- <h1><a href="/place/{{ id }}">{{ name }}</a></h1> -->
+          <!-- <h1>{{ name }}</h1> -->
+          <span class="place-label my-idea-is-label">My idea to improve this place...</span>
+          <h1 class="my-idea-is">{{ description }}</h1>
           <span class="place-submission-details">
             {{#_}}<strong class="point-submitter">
               {{#if submitter.avatar_url }}
@@ -26,14 +28,17 @@
 
             <time datetime="{{ created_datetime }}" class="response-date">{{ fromnow created_datetime }}</time>
 
-            <a href="/place/{{ id }}" class="submission-count">{{ survey_count }} <span class="submission-type">{{ survey_label_by_count }}</span></a>
+            <!-- TODO: make this scroll to #survey without page refresh -->
+            <span class="survey-count"><a href="/place/{{ id }}">{{ survey_count }} {{ survey_label_by_count }}</a></span>
+
+            {{^if survey_config}}
+            <a href="/place/{{ id }}" class="view-on-map-btn btn btn-small">View On Map</a>
+            {{/if}}
 
           </span>
         </header>
 
         <section class="place-items">
-          <span class="place-label">My idea to improve this place...</span>
-          <h1 class="my-idea-is"><a href="/place/{{ id }}">{{ description }}</a></h1>
           {{# attachments }}
           <div class="place-item place-attachment-{{ name }}">
             <img src="{{ file }}" class="place-value place-value-{{ name }}" alt="{{ name }}">

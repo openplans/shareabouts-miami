@@ -225,24 +225,32 @@ a.close-btn {
 }
 
 /* Place Details */
-.place-header {
-  margin-bottom: 0;
-}
 h1.my-idea-is {
   font-size: 1.375em;
   margin-bottom: 0.75em;
 }
-h1.my-idea-is a {
-  text-decoration: none;
+.place-list h1.my-idea-is {
+  margin-bottom: 0.375em;
+  margin-right: 6em;
 }
 .place-label {
   font-size: 0.75em;
   text-transform: uppercase;
 }
 
+
 /* List View */
-.place-list .place-submission-details {
-  margin-top: 0;
+#list-search {
+  border: 0;
+}
+.list-search-form input.submit-btn {
+  font-size: 1em;
+  padding-right: 0.75em;
+  padding-left: 0.75em;
+}
+
+.place-list .place-items {
+  margin-right: 8em;
 }
 
 
