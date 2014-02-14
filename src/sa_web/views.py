@@ -136,7 +136,7 @@ def send_place_created_notifications(request, response):
     errors = []
 
     try:
-        place = json.loads(response.content)
+        place = json.loads(request.body)
     except ValueError:
         errors.append('Received invalid place JSON: %r' % (response.content,))
 
