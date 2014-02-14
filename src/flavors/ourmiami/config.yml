@@ -317,3 +317,7 @@ pages:
   - title: _(Contact us)
     slug: contact
     name: features
+
+notifications:
+  on_new_place: true
+  submitter_email_field: private-email
