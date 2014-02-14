@@ -42,9 +42,42 @@ var Shareabouts = Shareabouts || {};
         self.toggleListView();
       });
 
+      // Globally capture clicks. If they are internal and not in the pass
+      // through list, route them through Backbone's navigate method.
+      $(document).on('click', 'a[href^="/"]', function(evt) {
+        var $link = $(evt.currentTarget),
+            href = $link.attr('href'),
+            url;
+
+        // Allow shift+click for new tabs, etc.
+        if ((href === '/' ||
+             href.indexOf('/place') === 0 ||
+             href.indexOf('/page') === 0) &&
+             !evt.altKey && !evt.ctrlKey && !evt.metaKey && !evt.shiftKey) {
+          evt.preventDefault();
+
+          // Remove leading slashes and hash bangs (backward compatablility)
+          url = href.replace(/^\//, '').replace('#!/', '');
+
+          // # Instruct Backbone to trigger routing events
+          self.options.router.navigate(url, {
+            trigger: true
+          });
+
+          return false;
+        }
+      });
+
       // Handle collection events
       this.collection.on('add', this.onAddPlace, this);
       this.collection.on('remove', this.onRemovePlace, this);
+
+      // On any route (/place or /page), hide the list view
+      this.options.router.bind('route', function(route, router) {
+        if (this.listView && this.listView.isVisible()) {
+          this.hideListView();
+        }
+      }, this);
 
       // Only append the tools to add places (if supported)
       $('#map-container').append(Handlebars.templates['add-places'](this.options.placeConfig));
@@ -345,16 +378,22 @@ var Shareabouts = Shareabouts || {};
     render: function() {
       this.mapView.render();
     },
+    showListView: function() {
+      this.listView.sort();
+      this.listView.$el.addClass('is-exposed');
+      $('.show-the-list').addClass('is-visuallyhidden');
+      $('.show-the-map').removeClass('is-visuallyhidden');
+    },
+    hideListView: function() {
+      this.listView.$el.removeClass('is-exposed');
+      $('.show-the-list').removeClass('is-visuallyhidden');
+      $('.show-the-map').addClass('is-visuallyhidden');
+    },
     toggleListView: function() {
-      if (this.listView.$el.is(':visible')) {
-        this.listView.$el.removeClass('is-exposed');
-        $('.show-the-list').removeClass('is-visuallyhidden');
-        $('.show-the-map').addClass('is-visuallyhidden');
+      if (this.listView.isVisible()) {
+        this.hideListView();
       } else {
-        this.listView.$el.addClass('is-exposed');
-        this.listView.dateSort();
-        $('.show-the-list').addClass('is-visuallyhidden');
-        $('.show-the-map').removeClass('is-visuallyhidden');
+        this.showListView();
       }
     }
   });
