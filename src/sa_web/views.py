@@ -12,6 +12,7 @@ from django.shortcuts import render
 from django.conf import settings
 from django.core.cache import cache
 from django.core.mail import send_mail
+from django.template import TemplateDoesNotExist
 from django.template.loader import render_to_string
 from django.utils.timezone import now
 from django.views.decorators.csrf import ensure_csrf_cookie
@@ -166,6 +167,11 @@ def send_place_created_notifications(request, response):
     subject = render_to_string('new_place_email_subject.txt', context_data)
     body = render_to_string('new_place_email_body.txt', context_data)
 
+    try:
+        html_body = render_to_string('new_place_email_body.html', context_data)
+    except TemplateDoesNotExist:
+        html_body = None
+
     # connection = smtp.EmailBackend(
     #     host=...,
     #     port=...,
@@ -176,9 +182,9 @@ def send_place_created_notifications(request, response):
         subject,
         body,
         from_email,
-        [recipient_email])
+        [recipient_email],
         # connection=connection,
-        # html_message=html_body)  # For multipart, HTML-enabled emails
+        html_message=html_body)  # For multipart, HTML-enabled emails
     return
 
 
