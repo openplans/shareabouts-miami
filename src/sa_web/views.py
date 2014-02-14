@@ -11,7 +11,7 @@ from .config import get_shareabouts_config
 from django.shortcuts import render
 from django.conf import settings
 from django.core.cache import cache
-from django.core.mail import send_mail
+from django.core.mail import EmailMultiAlternatives
 from django.template import TemplateDoesNotExist
 from django.template.loader import render_to_string
 from django.utils.timezone import now
@@ -178,13 +178,17 @@ def send_place_created_notifications(request, response):
     #     username=...,
     #     use_tls=...)
 
-    send_mail(
+    # NOTE: In Django 1.7+, send_mail can handle multi-part email with the
+    # html_message parameter, but pre 1.7 cannot and we must construct the
+    # multipart message manually.
+    msg = EmailMultiAlternatives(
         subject,
         body,
         from_email,
-        [recipient_email],
-        # connection=connection,
-        html_message=html_body)  # For multipart, HTML-enabled emails
+        [recipient_email])#,
+        # connection=connection)
+    msg.attach_alternative(html_body, 'text/html')
+    msg.send()
     return
 
 
