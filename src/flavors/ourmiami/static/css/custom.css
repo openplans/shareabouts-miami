@@ -318,15 +318,16 @@ a.shareabouts-logo:hover {
 /* =Rating, Voting, Judges
 -------------------------------------------------------------- */
 
-.rating {
+.rating {}
+.user-rating {
   float: right;
   margin-bottom: 0.75em;
-  color: #fff;
   border: 2px solid #7C4199;
   text-align: center;
 }
 .user-rating-prompt {
   background-color: #7C4199;
+  color: #fff;
   padding: 5px;
   margin: 0;
   font-size: 0.75em;
