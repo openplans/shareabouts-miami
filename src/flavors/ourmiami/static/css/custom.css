@@ -106,7 +106,7 @@ textarea:focus {
   color: #fff;
   outline: 0;
 }
-textarea {
+.place-form textarea {
   height: 6em;
 }
 label {
@@ -436,7 +436,7 @@ button.star.is-full:disabled {
     height: 100%;
     margin: 0 0.75em;
   }
-  textarea {
+  .place-form textarea {
     height: 15em;
   }
 }
