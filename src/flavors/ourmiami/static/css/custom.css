@@ -106,6 +106,9 @@ textarea:focus {
   color: #fff;
   outline: 0;
 }
+textarea {
+  height: 6em;
+}
 label {
   color: #555;
   font-weight: 800;
@@ -414,6 +417,9 @@ button.star.is-full:disabled {
     width: auto;
     height: 100%;
     margin: 0 0.75em;
+  }
+  textarea {
+    height: 15em;
   }
 }
 
