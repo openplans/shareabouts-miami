@@ -319,6 +319,41 @@ pages:
   - title: _(Contact us)
     slug: contact
     name: features
+  - title: Filter Places
+    pages:
+      - title: All
+        external: true
+        url: /
+      - title: _(Child or Senior Citizen Focused Idea)
+        url: /filter/childidea
+        external: true
+      - title: _(Community Gathering Space)
+        url: /filter/communitygatheringspace
+        external: true
+      - title: _(Existing Place Makeover)
+        url: /filter/existingplacemakeover
+        external: true
+      - title: _(Garden/Farmer's Market/Healthy Eating)
+        url: /filter/gardenfarmersmarket
+        external: true
+      - title: _(Night Focused Idea)
+        url: /filter/nightfocusedidea
+        external: true
+      - title: _(Park/Parklet/Plaza)
+        url: /filter/parkparkletplaza
+        external: true
+      - title: _(Physical Activity/Exercise)
+        url: /filter/physicalactivity
+        external: true
+      - title: _(Public Waterfront)
+        url: /filter/publicwaterfront
+        external: true
+      - title: _(Safe Streets)
+        url: /filter/safestreets
+        external: true
+      - title: _(Shade and Public Comfort)
+        url: /filter/shadepubliccomfort
+        external: true
 
 notifications:
   on_new_place: true
