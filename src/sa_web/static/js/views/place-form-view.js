@@ -10,12 +10,42 @@ var Shareabouts = Shareabouts || {};
       'change input[type="file"]': 'onInputFileChange'
     },
     initialize: function(){
+      var textareaEvent = 'oninput' in document ? 'input' : 'keyup blur';
+
       S.TemplateHelpers.overridePlaceTypeConfig(this.options.placeConfig.items,
         this.options.defaultPlaceTypeName);
       S.TemplateHelpers.insertInputTypeFlags(this.options.placeConfig.items);
 
       // Bind model events
       this.model.on('error', this.onError, this);
+
+      // Listen to input changes on textareas. If they have a maxlength, then
+      // update the character count. If maxlength is not supported, then
+      // polyfill.
+      this.$el.on(textareaEvent, 'textarea', function(evt) {
+        var $counter = $(this).siblings('.character-counter'),
+            maxLen, curLen, remaining;
+
+        if (this.hasAttribute('maxlength')) {
+          maxLen = this.getAttribute('maxlength');
+          curLen = this.value.length;
+          remaining = maxLen - curLen;
+
+          if (remaining <= 20) {
+            $counter.addClass('warning');
+
+            if (remaining <= 0) {
+              remaining = 0;
+              this.value = this.value.substr(0, maxLen);
+            }
+          } else {
+            $counter.removeClass('warning');
+          }
+
+          $counter.text(remaining);
+          return false;
+        }
+      });
     },
     render: function(){
       // Augment the model data with place types for the drop down
