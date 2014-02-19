@@ -52,7 +52,7 @@
     placeDetailInitialize.call(this);
     initializeRatingView.call(this)
   }
-  
+
   var placeListItemInitialize = Shareabouts.PlaceListItemView.prototype.initialize;
   Shareabouts.PlaceListItemView.prototype.initialize = function() {
     placeListItemInitialize.call(this);
@@ -109,6 +109,95 @@
     }, this);
     return view;
   }
+
+  var appViewHideListView = Shareabouts.AppView.prototype.hideListView;
+  Shareabouts.AppView.prototype.hideListView = function() {
+    appViewHideListView.call(this);
+    this.mapView.clearFilter();
+  };
+
+  var appInitialize = Shareabouts.App.prototype.initialize;
+  Shareabouts.App.prototype.initialize = function(options) {
+    var self = this;
+
+    appInitialize.call(this, options);
+    this.route('filter/:locationtype', 'filterMap');
+
+    this.bind('route', function(route) {
+      if (route !== 'filterMap') {
+        this.appView.mapView.clearFilter();
+      }
+    }, this);
+
+
+    $(document).on('click', 'a[href^="/"]', function(evt) {
+      var $link = $(evt.currentTarget),
+          href = $link.attr('href'),
+          url;
+
+      // Handle /filter links
+      if (href.indexOf('/filter') === 0) {
+        evt.preventDefault();
+
+        // Remove leading slashes and hash bangs (backward compatablility)
+        url = href.replace(/^\//, '').replace('#!/', '');
+
+        // # Instruct Backbone to trigger routing events
+        self.navigate(url, { trigger: true });
+
+        return false;
+      }
+    });
+  };
+
+  Shareabouts.App.prototype.filterMap = function(locationType) {
+    this.appView.hidePanel();
+    this.appView.hideNewPin();
+    this.appView.destroyNewModels();
+    this.appView.showAddButton();
+
+    this.appView.mapView.filter(locationType);
+  };
+
+  var appViewMap = Shareabouts.App.prototype.viewMap;
+  Shareabouts.App.prototype.viewMap = function() {
+    appViewMap.call(this);
+    this.appView.mapView.clearFilter();
+  }
+
+  Shareabouts.MapView.prototype.clearFilter = function() {
+    var self = this;
+    this.collection.each(function(model) {
+      self.layerViews[model.cid].locationTypeFilter = null;
+      self.layerViews[model.cid].render();
+    });
+  };
+
+  Shareabouts.MapView.prototype.filter = function(locationType) {
+    var self = this;
+    console.log('filter the map', arguments);
+    this.collection.each(function(model) {
+      var modelLocationType = model.get('location_type');
+      self.layerViews[model.cid].locationTypeFilter = locationType;
+
+      if (modelLocationType &&
+          modelLocationType.toUpperCase() === locationType.toUpperCase()) {
+        self.layerViews[model.cid].show();
+      } else {
+        self.layerViews[model.cid].hide();
+      }
+    });
+  };
+
+  var layerViewShow = Shareabouts.LayerView.prototype.show;
+  Shareabouts.LayerView.prototype.show = function() {
+    if (!this.locationTypeFilter ||
+        this.locationTypeFilter.toUpperCase() === this.model.get('location_type').toUpperCase()) {
+      layerViewShow.call(this);
+    } else {
+      this.hide();
+    }
+  };
 
 }(Shareabouts));
 
