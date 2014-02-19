@@ -221,6 +221,14 @@ place:
       - key: required
         value: required
       name: location_type
+    - prompt: _(Your phone number)
+      type: text
+      name: private-phone
+      attrs:
+        - key: placeholder
+          value: _(Your number will not be shown publicly)
+        - key: size
+          value: 30
     - prompt: _(Show us with a picture)
       inputfile_label: _(Upload an image)
       type: file
