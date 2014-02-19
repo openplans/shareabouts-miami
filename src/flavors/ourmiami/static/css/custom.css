@@ -160,14 +160,14 @@ label {
 /* Logo */
 #site-title {
   height: 2.5em;
-  -webkit-box-sizing: border-box; 
-     -moz-box-sizing: border-box; 
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
           box-sizing: border-box;
 }
 #site-title a {
   height: 100%;
-  -webkit-box-sizing: border-box; 
-     -moz-box-sizing: border-box; 
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
           box-sizing: border-box;
 }
 #site-logo {
@@ -182,11 +182,15 @@ label {
   color: #bbb;
   text-shadow: none;
 }
-.access a:visited, 
-.access a:active, 
+.access a:visited,
+.access a:active,
 .access a:link {
-  background: #dbef16; 
+  background: #dbef16;
   color: #181818;
+}
+
+.access li ul {
+  min-width: 20em;
 }
 
 
@@ -262,8 +266,8 @@ a.ioby-project-link:hover {
   background-color: #fff;
   padding: 10px;
   margin: 0 0 5px;
-  -webkit-box-sizing: border-box; 
-     -moz-box-sizing: border-box; 
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
           box-sizing: border-box;
 }
 
@@ -410,13 +414,13 @@ button.star.is-full:disabled {
   #site-title {
     height: 4em;
   }
-  .access a:visited, 
-  .access a:active, 
+  .access a:visited,
+  .access a:active,
   .access a:link {
-    background: #fff; 
+    background: #fff;
   }
   .access a:hover {
-    background: #dbef16; 
+    background: #dbef16;
   }
   .sign-in-menu {
     color: #ccc;
