@@ -2,8 +2,7 @@
 
         <header class="place-header clearfix">
           <!-- <h1>{{ name }}</h1> -->
-          <span class="place-label my-idea-is-label">My idea to improve this place...</span>
-          <h1 class="my-idea-is">{{ description }}</h1>
+          <h1 class="my-idea-is">{{ title }}</h1>
           <span class="place-submission-details">
             {{#_}}<strong class="point-submitter">
               {{#if submitter.avatar_url }}
@@ -20,7 +19,7 @@
                   {{ anonymous_name }}
                 {{/if}}
               {{/if}}
-            </strong> {{ action_text }} this {{ place_type_label location_type}}
+            </strong> {{ action_text }} this {{ place_type_label location_type}} idea
 
             {{#if region}}
               in {{ region }}
@@ -43,7 +42,7 @@
             <img src="{{ file }}" class="place-value place-value-{{ name }}" alt="{{ name }}">
           </div>
           {{/ attachments }}
-          {{#each_place_item "submitter_name" "description" "location_type"}}
+          {{#each_place_item "title" "submitter_name" "location_type"}}
           <div class="place-item place-item-{{ name }}">
             <span class="place-label place-label-{{ name }}">{{ label }}</span>
             <p class="place-value place-value-{{ name }}">{{ value }}</p>

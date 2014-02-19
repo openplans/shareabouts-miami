@@ -18,6 +18,21 @@ map:
       attribution: '&copy; OpenStreetMap contributors, CC-BY-SA. <a href="http://mapbox.com/about/maps" target="_blank">Terms &amp; Feedback</a>'
 
 place_types:
+
+  BeautificationArt:
+    label: _(Beautification/Art)
+    rules:
+      - condition: '"{{location_type}}" === "BeautificationArt"'
+        icon:
+          iconUrl: /static/css/images/markers/dot-dbcf2c.png
+          iconSize: [17, 18]
+          iconAnchor: [9, 9]
+        focus_icon:
+          iconUrl: /static/css/images/markers/marker-dbcf2c.png
+          shadowUrl: /static/css/images/marker-shadow.png
+          iconSize: [25, 41]
+          shadowSize: [41, 41]
+          iconAnchor: [12, 41]
   ChildIdea:
     label: _(Child or Senior Citizen Focused Idea)
     rules:
@@ -28,36 +43,6 @@ place_types:
           iconAnchor: [9, 9]
         focus_icon:
           iconUrl: /static/css/images/markers/marker-70d52c.png
-          shadowUrl: /static/css/images/marker-shadow.png
-          iconSize: [25, 41]
-          shadowSize: [41, 41]
-          iconAnchor: [12, 41]
-
-  CommunityGatheringSpace:
-    label: _(Community Gathering Space)
-    rules:
-      - condition: '"{{location_type}}" === "CommunityGatheringSpace"'
-        icon:
-          iconUrl: /static/css/images/markers/dot-2654d2.png
-          iconSize: [17, 18]
-          iconAnchor: [9, 9]
-        focus_icon:
-          iconUrl: /static/css/images/markers/marker-2654d2.png
-          shadowUrl: /static/css/images/marker-shadow.png
-          iconSize: [25, 41]
-          shadowSize: [41, 41]
-          iconAnchor: [12, 41]
-
-  ExistingPlaceMakeover:
-    label: _(Existing Place Makeover)
-    rules:
-      - condition: '"{{location_type}}" === "ExistingPlaceMakeover"'
-        icon:
-          iconUrl: /static/css/images/markers/dot-dbcf2c.png
-          iconSize: [17, 18]
-          iconAnchor: [9, 9]
-        focus_icon:
-          iconUrl: /static/css/images/markers/marker-dbcf2c.png
           shadowUrl: /static/css/images/marker-shadow.png
           iconSize: [25, 41]
           shadowSize: [41, 41]
@@ -76,58 +61,16 @@ place_types:
           iconSize: [25, 41]
           shadowSize: [41, 41]
           iconAnchor: [12, 41]
-  NightFocusedIdea:
-    label: _(Night Focused Idea)
+  PhysicalActivity:
+    label: _(Physical Activity/Exercise)
     rules:
-      - condition: '"{{location_type}}" === "NightFocusedIdea"'
+      - condition: '"{{location_type}}" === "PhysicalActivity"'
         icon:
-          iconUrl: /static/css/images/markers/dot-744edc.png
+          iconUrl: /static/css/images/markers/triangle-4ab767.png
           iconSize: [17, 18]
           iconAnchor: [9, 9]
         focus_icon:
-          iconUrl: /static/css/images/markers/marker-744edc.png
-          shadowUrl: /static/css/images/marker-shadow.png
-          iconSize: [25, 41]
-          shadowSize: [41, 41]
-          iconAnchor: [12, 41]
-  ParkParkletPlaza:
-    label: _(Park/Parklet/Plaza)
-    rules:
-      - condition: '"{{location_type}}" === "ParkParkletPlaza"'
-        icon:
-          iconUrl: /static/css/images/markers/triangle-2654d2.png
-          iconSize: [17, 18]
-          iconAnchor: [9, 9]
-        focus_icon:
-          iconUrl: /static/css/images/markers/marker-2654d2.png
-          shadowUrl: /static/css/images/marker-shadow.png
-          iconSize: [25, 41]
-          shadowSize: [41, 41]
-          iconAnchor: [12, 41]
-  PublicWaterfront:
-    label: _(Public Waterfront)
-    rules:
-      - condition: '"{{location_type}}" === "PublicWaterfront"'
-        icon:
-          iconUrl: /static/css/images/markers/triangle-dbcf2c.png
-          iconSize: [17, 18]
-          iconAnchor: [9, 9]
-        focus_icon:
-          iconUrl: /static/css/images/markers/marker-dbcf2c.png
-          shadowUrl: /static/css/images/marker-shadow.png
-          iconSize: [25, 41]
-          shadowSize: [41, 41]
-          iconAnchor: [12, 41]
-  SafeStreets:
-    label: _(Safe Streets)
-    rules:
-      - condition: '"{{location_type}}" === "SafeStreets"'
-        icon:
-          iconUrl: /static/css/images/markers/triangle-e1264d.png
-          iconSize: [17, 18]
-          iconAnchor: [9, 9]
-        focus_icon:
-          iconUrl: /static/css/images/markers/marker-e1264d.png
+          iconUrl: /static/css/images/markers/marker-4ab767.png
           shadowUrl: /static/css/images/marker-shadow.png
           iconSize: [25, 41]
           shadowSize: [41, 41]
@@ -146,24 +89,38 @@ place_types:
           iconSize: [25, 41]
           shadowSize: [41, 41]
           iconAnchor: [12, 41]
-  PhysicalActivity:
-    label: _(Physical Activity/Exercise)
+  CommunityGatheringSpace:
+    label: _(Community Gathering Space)
     rules:
-      - condition: '"{{location_type}}" === "PhysicalActivity"'
+      - condition: '"{{location_type}}" === "CommunityGatheringSpace"'
         icon:
-          iconUrl: /static/css/images/markers/triangle-4ab767.png
+          iconUrl: /static/css/images/markers/dot-2654d2.png
           iconSize: [17, 18]
           iconAnchor: [9, 9]
         focus_icon:
-          iconUrl: /static/css/images/markers/marker-4ab767.png
+          iconUrl: /static/css/images/markers/marker-2654d2.png
           shadowUrl: /static/css/images/marker-shadow.png
           iconSize: [25, 41]
           shadowSize: [41, 41]
           iconAnchor: [12, 41]
-  Crowdfunded:
-    label: _(Idea Being Crowdfunded)
+  SafeStreets:
+    label: _(Safe Streets)
     rules:
-      - condition: '"{{location_type}}" === "Crowdfunded"'
+      - condition: '"{{location_type}}" === "SafeStreets"'
+        icon:
+          iconUrl: /static/css/images/markers/triangle-e1264d.png
+          iconSize: [17, 18]
+          iconAnchor: [9, 9]
+        focus_icon:
+          iconUrl: /static/css/images/markers/marker-e1264d.png
+          shadowUrl: /static/css/images/marker-shadow.png
+          iconSize: [25, 41]
+          shadowSize: [41, 41]
+          iconAnchor: [12, 41]
+  SignageWayfinding:
+    label: _(Signage and Wayfinding)
+    rules:
+      - condition: '"{{location_type}}" === "SignageWayfinding"'
         icon:
           iconUrl: /static/css/images/markers/dot-fa307d.png
           iconSize: [17, 18]
@@ -188,24 +145,34 @@ place:
   anonymous_name: _(Someone)
   submit_button_label: _(Post it to the map)
   items:
-    - prompt: _(Name)
+    - prompt: _(Your Name)
       label: _(Suggested by)
       type: text
       name: submitter_name
       attrs:
         - key: placeholder
-          value: _(Person/Org to be credited for idea)
+          value: _(Person/Org to be credited for idea publicly)
         - key: size
           value: 30
-    - prompt: _(* Your email)
+    - prompt: _(* Your mail)
       type: email
       optional: false
       name: private-email
       attrs:
         - key: placeholder
-          value: _(Email will not be shown publicly)
+          value: _(Your email will not be shown publicly)
         - key: size
           value: 30
+        - key: required
+          value: required
+    - prompt: _(* The title of my project is...)
+      type: textarea
+      name: title
+      optional: false
+      label: _(The title of my project is...)
+      attrs:
+        - key: placeholder
+          value: _(Help us with a great name to help identify your project.)
         - key: required
           value: required
     - prompt: _(* My idea to improve this place...)
@@ -215,7 +182,7 @@ place:
       label: _(My idea to improve this place...)
       attrs:
         - key: placeholder
-          value: _(Short term, low cost, block focused, all street scale or smaller ideas welcome)
+          value: _(Think low cost, block focused, short term, street scale or smaller.)
         - key: required
           value: required
     - prompt: _(* So that people could...)
@@ -225,7 +192,7 @@ place:
       label: _(So that people could...)
       attrs:
         - key: placeholder
-          value: _(Tell us why this idea would help make our Miami better)
+          value: _(Tell us why this idea would help make our Miami better.)
         - key: required
           value: required
     - prompt: _(* Idea type)
@@ -234,26 +201,22 @@ place:
       options:
         - label: _(Please choose...)
           value: ""
-        - label: _(Child or Senior Citizen Focused Idea)
+        - label: _(Beautification/Art)
+          value: BeautificationArt
+        - label: _(Child or Senior Citizen Focused)
           value: ChildIdea
-        - label: _(Community Gathering Space)
-          value: CommunityGatheringSpace
-        - label: _(Existing Place Makeover)
-          value: ExistingPlaceMakeover
-        - label: _(Garden/Farmer's Market/Healthy Eating)
+        - label: _(Garden/Farmers' Market/Healthy Eating)
           value: GardenFarmersMarket
-        - label: _(Night Focused Idea)
-          value: NightFocusedIdea
-        - label: _(Park/Parklet/Plaza)
-          value: ParkParkletPlaza
         - label: _(Physical Activity/Exercise)
           value: PhysicalActivity
-        - label: _(Public Waterfront)
-          value: PublicWaterfront
-        - label: _(Safe Streets)
-          value: SafeStreets
-        - label: _(Shade and Public Comfort)
+        - label: _(Public Comfort (shade, seating, etc.))
           value: ShadePublicComfort
+        - label: _(Gathering Space)
+          value: CommunityGatheringSpace
+        - label: _(Safety)
+          value: SafeStreets
+        - label: _(Signage and Wayfinding)
+          value: SignageWayfinding
       attrs:
       - key: required
         value: required
