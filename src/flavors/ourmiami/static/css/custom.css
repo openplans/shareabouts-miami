@@ -416,11 +416,16 @@ button.star.is-full:disabled {
   }
   .access a:visited,
   .access a:active,
-  .access a:link {
+  .access a:link,
+  .access .btn {
     background: #fff;
+    color: #181818;
   }
   .access a:hover {
     background: #dbef16;
+  }
+  .access li:hover > ul {
+    box-shadow: -5px 5px 10px rgba(85, 85, 85, 0.5);
   }
   .sign-in-menu {
     color: #ccc;
