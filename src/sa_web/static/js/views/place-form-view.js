@@ -23,19 +23,26 @@ var Shareabouts = Shareabouts || {};
       // update the character count. If maxlength is not supported, then
       // polyfill.
       this.$el.on(textareaEvent, 'textarea', function(evt) {
-        var maxLen, curLen, remaining;
+        var $counter = $(this).siblings('.character-counter'),
+            maxLen, curLen, remaining;
 
         if (this.hasAttribute('maxlength')) {
           maxLen = this.getAttribute('maxlength');
           curLen = this.value.length;
           remaining = maxLen - curLen;
 
-          if (remaining <= 0) {
-            remaining = 0;
-            this.value = this.value.substr(0, maxLen);
+          if (remaining <= 20) {
+            $counter.addClass('warning');
+
+            if (remaining <= 0) {
+              remaining = 0;
+              this.value = this.value.substr(0, maxLen);
+            }
+          } else {
+            $counter.removeClass('warning');
           }
 
-          $(this).siblings('.character-counter').text(remaining);
+          $counter.text(remaining);
           return false;
         }
       });
