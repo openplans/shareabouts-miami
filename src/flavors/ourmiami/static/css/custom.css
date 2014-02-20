@@ -107,7 +107,10 @@ textarea:focus {
   outline: 0;
 }
 .place-form textarea {
-  height: 6em;
+  height: 7.5em;
+}
+textarea#place-title {
+  height: 4.25em;
 }
 label {
   color: #555;
