@@ -154,7 +154,7 @@ place:
           value: _(Person/Org to be credited for idea publicly)
         - key: size
           value: 30
-    - prompt: _(* Your mail)
+    - prompt: _(* Your email)
       type: email
       optional: false
       name: private-email
