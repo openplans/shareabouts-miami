@@ -107,7 +107,10 @@ textarea:focus {
   outline: 0;
 }
 .place-form textarea {
-  height: 6em;
+  height: 7.5em;
+}
+textarea#place-title {
+  height: 4.25em;
 }
 label {
   color: #555;
@@ -121,11 +124,15 @@ label {
   margin-left: 0.375em;
 }
 
+form .signed-in-as {
+  width: 100%;
+}
+
 .textarea-container {
   display: block;
   position: relative;
 }
-.character-counter {
+.remaining-characters {
   position: absolute;
   bottom: 100%;
   right: 1em;
@@ -137,7 +144,7 @@ label {
   padding: 4px 8px 2px 8px;
   border-radius: 4px 4px 0 0;
 }
-.character-counter.warning {
+.remaining-characters.warning {
   background-color: Crimson;
   color: #fff;
   text-shadow: 0 0 3px #7C4199;
@@ -175,6 +182,10 @@ label {
   width: auto;
 }
 
+.why-sign-in {
+  display: none;
+}
+
 /* Navigation */
 #nav-btn {
   font-family: "Helvetica Neue", Arial !important;
@@ -189,8 +200,41 @@ label {
   color: #181818;
 }
 
-.access li ul {
-  min-width: 20em;
+/* icons in filter menu */
+.access li:nth-child(3) > a {
+  display: none;
+}
+.access li ul li a {
+  background: #fff url() 5px center no-repeat scroll !important;
+  text-align: left !important;
+  padding: 10px 10px 10px 30px !important;
+}
+.access li ul li a:hover {
+  background-color: #dbef16 !important;
+}
+.access li ul li:nth-child(2) a {
+  background-image: url(/static/css/images/markers/dot-dbcf2c.png) !important;/* Beautification/Art */
+}
+.access li ul li:nth-child(3) a {
+  background-image: url(/static/css/images/markers/dot-70d52c.png) !important;/* Child/Senior Citizen Focused */
+}
+.access li ul li:nth-child(4) a {
+  background-image: url(/static/css/images/markers/dot-e1264d.png) !important;/* Garden/Farmers' Market/Healthy Eating */
+}
+.access li ul li:nth-child(5) a {
+  background-image: url(/static/css/images/markers/triangle-4ab767.png) !important;/* Physical Activity/Exercise */
+}
+.access li ul li:nth-child(6) a {
+  background-image: url(/static/css/images/markers/triangle-744edc.png) !important;/* Public Comfort (shade, seating, etc.)) */
+}
+.access li ul li:nth-child(7) a {
+  background-image: url(/static/css/images/markers/dot-2654d2.png) !important;/* Gathering Space */
+}
+.access li ul li:nth-child(8) a {
+  background-image: url(/static/css/images/markers/triangle-e1264d.png) !important;/* Safety */
+}
+.access li ul li:nth-child(9) a {
+  background-image: url(/static/css/images/markers/dot-fa307d.png) !important;/* Signage/Wayfinding */
 }
 
 
@@ -236,7 +280,13 @@ a.close-btn {
   margin: 0 5px 10px 5px;
   position: relative;
   top: 5px;
-  font-size: 1.125em;
+  font-size: 0.875em;
+}
+.ioby-project-title .ioby-logo-small {
+  height: 1.5em;
+  width: auto;
+  float: right;
+  margin: 0 0 0 0.5em;
 }
 a.ioby-project-link {
   display: block;
@@ -414,18 +464,23 @@ button.star.is-full:disabled {
   #site-title {
     height: 4em;
   }
+  .access li:nth-child(3) > a {
+    display: block;
+  }
   .access a:visited,
   .access a:active,
   .access a:link,
   .access .btn {
     background: #fff;
     color: #181818;
+    text-align: left;
   }
   .access a:hover {
     background: #dbef16;
   }
   .access li:hover > ul {
     box-shadow: -5px 5px 10px rgba(85, 85, 85, 0.5);
+    min-width: 26em;
   }
   .sign-in-menu {
     color: #ccc;
@@ -483,6 +538,36 @@ button.star.is-full:disabled {
   }
   .place-form textarea {
     height: 15em;
+  }
+
+  a.why-sign-in,
+  a.why-sign-in:hover {
+    display: block;
+    position: absolute;
+    right: 2.25em;
+    bottom: 0.875em;
+    color: #555;
+    font-size: 0.625em;
+    text-transform: uppercase;
+    z-index: 1;
+  }
+  a.why-sign-in span {
+    display: none;
+  }
+  a.why-sign-in:hover span {
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 100%;
+    width: 25em;
+    cursor: default;
+    background: #fff;
+    font-size: 1.375em;
+    text-transform: none;
+    text-decoration: none;
+    box-shadow: -0.125em 0.125em 0.5em rgba(0,0,0,0.25);
+    padding: 1.5em;
+    border-radius: 0.25em;
   }
 }
 

@@ -14,6 +14,11 @@
               is already logged in.
       -->
 
+    {{#is_authenticated}}
+    <p class="signed-in-as"><img src="{{ current_user "avatar_url" }}" class="avatar" /> {{ current_user "name" }}. <a class="" href="/users/logout/">Log Out</a></p>
+    {{^}}
+    {{/is_authenticated}}
+
     {{# place_config.items }}
     <p class="{{ type }}">
       {{#is_authenticated}}
@@ -38,8 +43,8 @@
 
       {{#is_textarea}}
       <span class="textarea-container">
-        <textarea id="place-{{ name }}" name="{{ name }}"{{#attrs}} {{ key }}="{{ value }}"{{/attrs}} maxlength="400"></textarea>
-        <span class="character-counter">400</span>
+        <textarea id="place-{{ name }}" name="{{ name }}"{{#attrs}} {{ key }}="{{ value }}"{{/attrs}} maxlength="750"></textarea>
+        <span class="remaining-characters"><span class="character-counter">750</span> Characters</span><!-- TODO: move this to the js when we use config for maxlength -->
       </span>
       {{/is_textarea}}
 
@@ -78,11 +83,6 @@
   </fieldset>
 
   <input name="save-place-btn" id="save-place-btn" type="submit" value="{{ place_config.submit_button_label }}" class="btn btn-primary submit-btn">
-
-  {{#is_authenticated}}
-    <p class="signed-in-as"><img src="{{ current_user "avatar_url" }}" class="avatar" /> {{ current_user "name" }}. <a class="" href="/users/logout/">Log Out</a></p>
-  {{^}}
-  {{/is_authenticated}}
 
   <div class="form-spinner"></div>
 
