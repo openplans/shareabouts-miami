@@ -34,7 +34,7 @@ place_types:
           shadowSize: [41, 41]
           iconAnchor: [12, 41]
   ChildIdea:
-    label: _(Child or Senior Citizen Focused Idea)
+    label: _(Child/Senior Citizen Focused)
     rules:
       - condition: '"{{location_type}}" === "ChildIdea"'
         icon:
@@ -48,7 +48,7 @@ place_types:
           shadowSize: [41, 41]
           iconAnchor: [12, 41]
   GardenFarmersMarket:
-    label: _(Garden/Farmer's Market/Healthy Eating)
+    label: _(Garden/Farmers' Market/Healthy Eating)
     rules:
       - condition: '"{{location_type}}" === "GardenFarmersMarket"'
         icon:
@@ -76,7 +76,7 @@ place_types:
           shadowSize: [41, 41]
           iconAnchor: [12, 41]
   ShadePublicComfort:
-    label: _(Shade and Public Comfort)
+    label: _(Public Comfort (shade, seating, etc.))
     rules:
       - condition: '"{{location_type}}" === "ShadePublicComfort"'
         icon:
@@ -90,7 +90,7 @@ place_types:
           shadowSize: [41, 41]
           iconAnchor: [12, 41]
   CommunityGatheringSpace:
-    label: _(Community Gathering Space)
+    label: _(Gathering Space)
     rules:
       - condition: '"{{location_type}}" === "CommunityGatheringSpace"'
         icon:
@@ -104,7 +104,7 @@ place_types:
           shadowSize: [41, 41]
           iconAnchor: [12, 41]
   SafeStreets:
-    label: _(Safe Streets)
+    label: _(Safety)
     rules:
       - condition: '"{{location_type}}" === "SafeStreets"'
         icon:
@@ -118,7 +118,7 @@ place_types:
           shadowSize: [41, 41]
           iconAnchor: [12, 41]
   SignageWayfinding:
-    label: _(Signage and Wayfinding)
+    label: _(Signage/Wayfinding)
     rules:
       - condition: '"{{location_type}}" === "SignageWayfinding"'
         icon:
@@ -203,7 +203,7 @@ place:
           value: ""
         - label: _(Beautification/Art)
           value: BeautificationArt
-        - label: _(Child or Senior Citizen Focused)
+        - label: _(Child/Senior Citizen Focused)
           value: ChildIdea
         - label: _(Garden/Farmers' Market/Healthy Eating)
           value: GardenFarmersMarket
@@ -215,7 +215,7 @@ place:
           value: CommunityGatheringSpace
         - label: _(Safety)
           value: SafeStreets
-        - label: _(Signage and Wayfinding)
+        - label: _(Signage/Wayfinding)
           value: SignageWayfinding
       attrs:
       - key: required
