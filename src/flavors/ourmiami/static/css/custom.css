@@ -193,10 +193,6 @@ form .signed-in-as {
   color: #181818;
 }
 
-.access li ul {
-  min-width: 20em;
-}
-
 
 /* =The Ticker
 -------------------------------------------------------------- */
@@ -424,12 +420,14 @@ button.star.is-full:disabled {
   .access .btn {
     background: #fff;
     color: #181818;
+    text-align: left;
   }
   .access a:hover {
     background: #dbef16;
   }
   .access li:hover > ul {
     box-shadow: -5px 5px 10px rgba(85, 85, 85, 0.5);
+    min-width: 26em;
   }
   .sign-in-menu {
     color: #ccc;
