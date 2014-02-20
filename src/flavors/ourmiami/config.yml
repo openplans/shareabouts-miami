@@ -172,7 +172,7 @@ place:
       label: _(The title of my project is...)
       attrs:
         - key: placeholder
-          value: _(Help us with a great name to help identify your project.)
+          value: _(Help us with a great name to identify your project.)
         - key: required
           value: required
     - prompt: _(* My idea to improve this place...)
