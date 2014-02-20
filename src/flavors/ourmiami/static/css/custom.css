@@ -121,6 +121,10 @@ label {
   margin-left: 0.375em;
 }
 
+form .signed-in-as {
+  width: 100%;
+}
+
 .textarea-container {
   display: block;
   position: relative;
