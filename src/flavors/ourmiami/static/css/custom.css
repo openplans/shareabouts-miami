@@ -129,7 +129,7 @@ form .signed-in-as {
   display: block;
   position: relative;
 }
-.character-counter {
+.remaining-characters {
   position: absolute;
   bottom: 100%;
   right: 1em;
@@ -141,7 +141,7 @@ form .signed-in-as {
   padding: 4px 8px 2px 8px;
   border-radius: 4px 4px 0 0;
 }
-.character-counter.warning {
+.remaining-characters.warning {
   background-color: Crimson;
   color: #fff;
   text-shadow: 0 0 3px #7C4199;

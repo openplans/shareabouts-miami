@@ -44,7 +44,7 @@
       {{#is_textarea}}
       <span class="textarea-container">
         <textarea id="place-{{ name }}" name="{{ name }}"{{#attrs}} {{ key }}="{{ value }}"{{/attrs}} maxlength="400"></textarea>
-        <span class="character-counter">400</span>
+        <span class="remaining-characters"><span class="character-counter">400</span> Characters</span>
       </span>
       {{/is_textarea}}
 
