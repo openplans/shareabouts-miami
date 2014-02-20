@@ -196,6 +196,43 @@ form .signed-in-as {
   color: #181818;
 }
 
+/* icons in filter menu */
+.access li:nth-child(3) > a {
+  display: none;
+}
+.access li ul li a {
+  background: #fff url() 5px center no-repeat scroll !important;
+  text-align: left !important;
+  padding: 10px 10px 10px 30px !important;
+}
+.access li ul li a:hover {
+  background-color: #dbef16 !important;
+}
+.access li ul li:nth-child(2) a {
+  background-image: url(/static/css/images/markers/dot-dbcf2c.png) !important;/* Beautification/Art */
+}
+.access li ul li:nth-child(3) a {
+  background-image: url(/static/css/images/markers/dot-70d52c.png) !important;/* Child/Senior Citizen Focused */
+}
+.access li ul li:nth-child(4) a {
+  background-image: url(/static/css/images/markers/dot-e1264d.png) !important;/* Garden/Farmers' Market/Healthy Eating */
+}
+.access li ul li:nth-child(5) a {
+  background-image: url(/static/css/images/markers/triangle-4ab767.png) !important;/* Physical Activity/Exercise */
+}
+.access li ul li:nth-child(6) a {
+  background-image: url(/static/css/images/markers/triangle-744edc.png) !important;/* Public Comfort (shade, seating, etc.)) */
+}
+.access li ul li:nth-child(7) a {
+  background-image: url(/static/css/images/markers/dot-2654d2.png) !important;/* Gathering Space */
+}
+.access li ul li:nth-child(8) a {
+  background-image: url(/static/css/images/markers/triangle-e1264d.png) !important;/* Safety */
+}
+.access li ul li:nth-child(9) a {
+  background-image: url(/static/css/images/markers/dot-fa307d.png) !important;/* Signage/Wayfinding */
+}
+
 
 /* =The Ticker
 -------------------------------------------------------------- */
@@ -416,6 +453,9 @@ button.star.is-full:disabled {
 @media only screen and (min-width: 60em) {
   #site-title {
     height: 4em;
+  }
+  .access li:nth-child(3) > a {
+    display: block;
   }
   .access a:visited,
   .access a:active,

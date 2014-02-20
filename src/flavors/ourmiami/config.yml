@@ -295,6 +295,9 @@ pages:
       - title: All
         external: true
         url: /
+      - title: _(Beautification/Art)
+        url: /filter/beautificationart
+        external: true
       - title: _(Child/Senior Citizen Focused)
         url: /filter/childidea
         external: true
