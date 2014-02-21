@@ -43,8 +43,8 @@
 
       {{#is_textarea}}
       <span class="textarea-container">
-        <textarea id="place-{{ name }}" name="{{ name }}"{{#attrs}} {{ key }}="{{ value }}"{{/attrs}} maxlength="750"></textarea>
-        <span class="remaining-characters"><span class="character-counter">750</span> Characters</span><!-- TODO: move this to the js when we use config for maxlength -->
+        <textarea id="place-{{ name }}" name="{{ name }}"{{#attrs}} {{ key }}="{{ value }}"{{/attrs}}></textarea>
+        <span class="remaining-characters"><span class="character-counter"></span> Characters</span>
       </span>
       {{/is_textarea}}
 

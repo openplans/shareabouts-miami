@@ -175,6 +175,8 @@ place:
           value: _(Help us with a great name to identify your project.)
         - key: required
           value: required
+        - key: maxlength
+          value: 100
     - prompt: _(* My idea to improve this place...)
       type: textarea
       name: description
@@ -185,6 +187,8 @@ place:
           value: _(Think low cost, block focused, short term, street scale or smaller.)
         - key: required
           value: required
+        - key: maxlength
+          value: 750
     - prompt: _(* So that people could...)
       type: textarea
       name: details
@@ -195,6 +199,8 @@ place:
           value: _(Tell us why this idea would help make our Miami better.)
         - key: required
           value: required
+        - key: maxlength
+          value: 750
     - prompt: _(* Idea type)
       label: _(Idea type)
       type: select

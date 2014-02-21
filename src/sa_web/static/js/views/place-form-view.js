@@ -56,6 +56,17 @@ var Shareabouts = Shareabouts || {};
       }, this.model.toJSON());
 
       this.$el.html(Handlebars.templates['place-form'](data));
+
+      // Init counter text
+      this.$('textarea').each(function() {
+        var $counter = $(this).siblings('.remaining-characters').children('.character-counter');
+
+        if (this.hasAttribute('maxlength')) {
+          $counter.text(this.getAttribute('maxlength'));
+        }
+      });
+
+
       return this;
     },
     remove: function() {
