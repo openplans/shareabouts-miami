@@ -42,12 +42,15 @@
             <img src="{{ file }}" class="place-value place-value-{{ name }}" alt="{{ name }}">
           </div>
           {{/ attachments }}
-          {{#each_place_item "title" "submitter_name" "location_type"}}
+          {{#each_place_item "title" "submitter_name" "location_type" "infolink"}}
           <div class="place-item place-item-{{ name }}">
             <span class="place-label place-label-{{ name }}">{{ label }}</span>
             <p class="place-value place-value-{{ name }}">{{ value }}</p>
           </div>
           {{/each_place_item }}
+          <div class="place-item place-item-infolink">
+            <p class="place-value place-value-infolink"><a href="{{infolink}}">{{infolink}}</a></p>
+          </div>
         </section>
 
         <div class="ioby-details"></div>
