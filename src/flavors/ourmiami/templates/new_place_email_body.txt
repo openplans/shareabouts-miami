@@ -1,47 +1,31 @@
-We received your Public Space Challenge idea. Thank you for sharing!
+We received your Public Space Challenge idea. Thank you!
 
-Your Our Miami Public Space Challenge idea number is: {{ place.id }}
+Here is a link to your idea on the map: <http://{{ request.get_host }}/place/{{ place.id }}>
 
-The link to your idea is: http://{{ request.get_host }}/place/{{ place.id }}.
+What now?
 
-We hope you'll keep participating with us throughout the Challenge and
-beyond.
+SHARE your idea with your friends on social media (pssst... the idea that receives the most "likes" will get something special). Be sure to check out and comment on other ideas while you're at it.
 
-Here are more ways to make your idea come to life:
+SUBMIT another idea. We know you have some more good ones! You have until XX April to get ideas onto the map.
 
-  - Stay connected, follow The Miami Foundation <http://miamifoundation.org/>
-    on Facebook <https://www.facebook.com/themiamifoundation> and
-    Twitter <https://twitter.com/miamifoundation>. Use the hashtag
-    #OurMiami <https://twitter.com/search?q=ourmiami&src=typd>.
+START working on your project now. Our partner ioby--a tool for people who have great ideas for their neighborhoods--can help you get funding and volunteers now. <http://www.ioby.org/>
 
-  - Learn how to make great public spaces with our partner Project for Public
-    Spaces <http://www.pps.org/reference/reference-categories/placemaking-tools/>.
-    Follow them on Facebook <https://www.facebook.com/projectforpublicspaces> &
-    Twitter <https://twitter.com/PPS_Placemaking>.
+CALENDAR:
+April 8: Our panel of local experts and professional placemakers will begin reviewing all ideas as soon as the submission period ends.
+Late April: We will notify ideas selected as finalists and walk project leaders through the full proposal process.  Project leaders will receive additional technical assistance to help them with their full proposals.
+Mid May: Full proposals will be due and our panel will review.
+Mid June: We will announce the winning ideas.
 
-  - Learn about how to crowdfund and crowd-resource your project with our
-    partner IOBY.org <http://ioby.org>. Follow them on 
-    Facebook <https://www.facebook.com/ioby.org> &
-    Twitter <https://twitter.com/ioby>.
+If you have any questions, we'll be standing by at <mailto:ourmiami@miamifoundation.org>.
 
-Help raise awareness!
+Thanks for your help in making Our Miami better!
 
-  - Support and comment on other Miamian's ideas on ideas.ourmiami.org.
+Stuart Kennedy
+Senior Programs Officer
+The Miami Foundation
 
-  - Share your idea on Facebook <http://facebook.com> &
-    Twitter <http://twitter.com>, get your friends involved.
+----------
 
-  - Email your idea link <http://{{ request.get_host }}/place/{{ place.id }}> to your
-    friends & neighbors to build support for it.
+Through the Our Miami initiative, The Miami Foundation fosters community by building attachment to the city, developing public spaces and retaining young talent in Miami. Our Miami uses research from their Soul of the Community Study that clearly shows activating public spaces and attracting young, talented and creative people in Greater Miami will grow the economy faster than other more traditional measures of economic development.
 
-  - Support the Miami Herald's focus on public space by joining this Public
-    Insight Network survey <http://pinsight.org/q/en/2ac656fa20e5>
-
-Thanks again for working to make Our Miami better!
-
-Through the Our Miami initiative, The Miami Foundation fosters community by
-building attachment to the city, developing public spaces and retaining
-young talent in Miami. Our Miami uses research from their Soul of the
-Community Study that clearly shows activating public spaces and attracting
-young, talented and creative people in Greater Miami will grow the economy
-faster than other more traditional measures of economic development.
+<http://miamifoundation.org>
