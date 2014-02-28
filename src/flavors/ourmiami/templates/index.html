@@ -13,29 +13,36 @@
     <meta name="twitter:title" content="{{ place.properties.title }}">
     <meta name="twitter:description" content="{{ place.properties.description }}">
     {% with attachment=place.properties.attachments|first %}
-    <meta name="twitter:image:src" content="{{ attachment.file }}">
+      {% if attachment.file %}
+        <meta name="twitter:image:src" content="{{ attachment.file }}">
+      {% else %}
+        <meta name="twitter:image:src" content="http://{{ request.get_host }}{{ STATIC_URL }}css/images/public-space-challenge-square.jpg">
+      {% endif %}
     {% endwith %}
-    {% comment %} TODO: Fill this in when we know if the username is from twitter
-      <meta name="twitter:creator" content="place.submitter.username">
-    {% endcomment %}
 
     <!-- Facebook -->
     <meta property="og:site_name" content="{{ config.app.title }}" />
     <meta property="og:title" content="{{ place.properties.title }}" />
     <meta property="og:description" content="{{ place.properties.description }}" />
     {% with attachment=place.properties.attachments|first %}
-    <meta name="og:image" content="{{ attachment.file }}">
+      {% if attachment.file %}
+        <meta property="og:image" content="{{ attachment.file }}">
+      {% else %}
+        <meta property="og:image" content="http://{{ request.get_host }}{{ STATIC_URL }}css/images/public-space-challenge-square.jpg">
+      {% endif %}
     {% endwith %}
   {% else %}
     <!-- Twitter -->
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="{{ config.app.title }}">
     <meta name="twitter:description" content="{{ config.app.meta_description }}">
+    <meta name="twitter:image:src" content="http://{{ request.get_host }}{{ STATIC_URL }}css/images/public-space-challenge-square.jpg">
 
     <!-- Facebook -->
     <meta property="og:site_name" content="{{ config.app.title }}" />
     <meta property="og:title" content="{{ config.app.title }}" />
     <meta property="og:description" content="{{ config.app.meta_description }}" />
+    <meta property="og:image" content="http://{{ request.get_host }}{{ STATIC_URL }}css/images/public-space-challenge-square.jpg">
   {% endif%}
 {% endblock %}
 
