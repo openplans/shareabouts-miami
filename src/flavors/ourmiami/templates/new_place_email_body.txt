@@ -1,0 +1,47 @@
+We received your Public Space Challenge idea. Thank you for sharing!
+
+Your Our Miami Public Space Challenge idea number is: {{ place.id }}
+
+The link to your idea is: http://{{ request.get_host }}/place/{{ place.id }}.
+
+We hope you'll keep participating with us throughout the Challenge and
+beyond.
+
+Here are more ways to make your idea come to life:
+
+  - Stay connected, follow The Miami Foundation <http://miamifoundation.org/>
+    on Facebook <https://www.facebook.com/themiamifoundation> and
+    Twitter <https://twitter.com/miamifoundation>. Use the hashtag
+    #OurMiami <https://twitter.com/search?q=ourmiami&src=typd>.
+
+  - Learn how to make great public spaces with our partner Project for Public
+    Spaces <http://www.pps.org/reference/reference-categories/placemaking-tools/>.
+    Follow them on Facebook <https://www.facebook.com/projectforpublicspaces> &
+    Twitter <https://twitter.com/PPS_Placemaking>.
+
+  - Learn about how to crowdfund and crowd-resource your project with our
+    partner IOBY.org <http://ioby.org>. Follow them on 
+    Facebook <https://www.facebook.com/ioby.org> &
+    Twitter <https://twitter.com/ioby>.
+
+Help raise awareness!
+
+  - Support and comment on other Miamian's ideas on ideas.ourmiami.org.
+
+  - Share your idea on Facebook <http://facebook.com> &
+    Twitter <http://twitter.com>, get your friends involved.
+
+  - Email your idea link <http://{{ request.get_host }}/place/{{ place.id }}> to your
+    friends & neighbors to build support for it.
+
+  - Support the Miami Herald's focus on public space by joining this Public
+    Insight Network survey <http://pinsight.org/q/en/2ac656fa20e5>
+
+Thanks again for working to make Our Miami better!
+
+Through the Our Miami initiative, The Miami Foundation fosters community by
+building attachment to the city, developing public spaces and retaining
+young talent in Miami. Our Miami uses research from their Soul of the
+Community Study that clearly shows activating public spaces and attracting
+young, talented and creative people in Greater Miami will grow the economy
+faster than other more traditional measures of economic development.
