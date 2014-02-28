@@ -9,6 +9,9 @@ from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 # you use a better suited server instead.  Consult the documentation on serving
 # static files with Django for your deploy platform.
 
+def generate_error(request):
+    raise Exception('Congratulations, you have successfully failed!')
+
 urlpatterns = staticfiles_urlpatterns() + patterns('',
     # Examples:
     # url(r'^$', 'project.views.home', name='home'),
@@ -20,6 +23,7 @@ urlpatterns = staticfiles_urlpatterns() + patterns('',
     # Uncomment the next line to enable the admin:
     # url(r'^admin/', include(admin.site.urls)),
 
+    url(r'^generate-error$', generate_error),
     url(r'^choose-language$', 'django.views.i18n.set_language', name='set_language'),
     url(r'^', include('sa_web.urls')),
 )

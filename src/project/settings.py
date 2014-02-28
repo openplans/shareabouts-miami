@@ -221,6 +221,15 @@ LOGGING = {
 
 env = os.environ
 
+if 'ADMINS' in env:
+    # Get the list of administrators that get notified on 500 errors
+    ADMINS = [
+        (admin.split('@')[0], admin)
+        for admin in os.environ.get('ADMINS', '').split(',')
+    ]
+if 'EMAIL_SUBJECT_PREFIX' in env:
+    EMAIL_SUBJECT_PREFIX = env['EMAIL_SUBJECT_PREFIX']
+
 if 'SHAREABOUTS_FLAVOR' in env:
     SHAREABOUTS['FLAVOR'] = env.get('SHAREABOUTS_FLAVOR')
 if 'SHAREABOUTS_DATASET_ROOT' in env:
