@@ -221,6 +221,10 @@ LOGGING = {
 
 env = os.environ
 
+if 'DEBUG' in env:
+    DEBUG = (env['DEBUG'].lower() == 'true')
+    TEMPLATE_DEBUG = DEBUG
+
 if 'ADMINS' in env:
     # Get the list of administrators that get notified on 500 errors
     ADMINS = [
