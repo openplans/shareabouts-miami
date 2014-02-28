@@ -382,7 +382,9 @@ a.shareabouts-logo:hover {
   margin: 1em auto;
 }
 .ourmiami-logo,
-.ioby-logo {
+.ioby-logo,
+.miamiherald-logo,
+.hfsf-logo {
   height: 3em;
   width: auto;
 }
@@ -536,6 +538,10 @@ button.star.is-full:disabled {
     height: 100%;
     margin: 0 0.75em;
   }
+  .footer-logo .miamiherald-logo,
+  .footer-logo .hfsf-logo {
+    display: none;
+  }
   .place-form textarea {
     height: 15em;
   }
@@ -571,7 +577,11 @@ button.star.is-full:disabled {
   }
 }
 
-@media only screen and (min-width: 80em) {
+@media only screen and (min-width: 74em) {
+  .footer-logo .miamiherald-logo,
+  .footer-logo .hfsf-logo {
+    display: block;
+  }
 }
 
 /* High Resolution Displays */
