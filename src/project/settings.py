@@ -257,6 +257,11 @@ if 'EMAIL_USE_TLS' in env:
 if 'EMAIL_NOTIFICATIONS_BCC' in env:
     EMAIL_NOTIFICATIONS_BCC = env['EMAIL_NOTIFICATIONS_BCC'].split(',')
 
+if 'GOOGLE_ANALYTICS_ID' in env:
+    GOOGLE_ANALYTICS_ID = env.get('GOOGLE_ANALYTICS_ID')
+if 'GOOGLE_ANALYTICS_DOMAIN' in env:
+    GOOGLE_ANALYTICS_DOMAIN = env.get('GOOGLE_ANALYTICS_DOMAIN')
+
 ##############################################################################
 # Local settings overrides
 # ------------------------
