@@ -334,6 +334,9 @@ h1.my-idea-is {
   font-size: 0.75em;
   text-transform: uppercase;
 }
+.place-value-infolink > a {
+  word-wrap: break-word;
+}
 
 
 /* List View */
