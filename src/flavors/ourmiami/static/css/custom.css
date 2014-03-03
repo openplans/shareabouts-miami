@@ -580,9 +580,13 @@ button.star.is-full:disabled {
   }
 }
 
-@media only screen and (min-width: 74em) {
-  .footer-logo .miamiherald-logo,
+@media only screen and (min-width: 64em) {
   .footer-logo .hfsf-logo {
+    display: block;
+  }
+}
+@media only screen and (min-width: 74em) {
+  .footer-logo .miamiherald-logo {
     display: block;
   }
 }
