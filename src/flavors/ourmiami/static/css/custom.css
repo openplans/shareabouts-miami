@@ -255,6 +255,21 @@ form .signed-in-as {
   background: #00afdb;
   border-color: rgba(0,0,0,0.1);
 }
+.recent-points small,
+.recent-points .submitter,
+.recent-points .action {
+  color: #777;
+}
+.recent-points small {
+  font-size: 0.75em;
+  font-weight: 400;
+  letter-spacing: -0.03em;
+}
+.recent-points a:hover small,
+.recent-points a:hover .submitter,
+.recent-points a:hover .action {
+  color: #fff;
+}
 
 
 /* =Content: Pages & Places
