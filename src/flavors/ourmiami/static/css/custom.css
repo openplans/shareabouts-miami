@@ -542,7 +542,7 @@ button.star.is-full:disabled {
     margin: 0 0.75em;
   }
   .footer-logo .miamiherald-logo,
-  .footer-logo .hfsf-logo {
+  .footer-logo .ioby-logo {
     display: none;
   }
   .place-form textarea {
@@ -581,7 +581,7 @@ button.star.is-full:disabled {
 }
 
 @media only screen and (min-width: 64em) {
-  .footer-logo .hfsf-logo {
+  .footer-logo .ioby-logo {
     display: block;
   }
 }
