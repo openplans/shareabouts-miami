@@ -213,28 +213,28 @@ form .signed-in-as {
   background-color: #dbef16 !important;
 }
 .access li ul li:nth-child(2) a {
-  background-image: url(/static/css/images/markers/dot-dbcf2c.png) !important;/* Beautification/Art */
+  background-image: url(/static/css/images/markers/dot-yellow.png) !important;/* Beautification/Art */
 }
 .access li ul li:nth-child(3) a {
-  background-image: url(/static/css/images/markers/dot-70d52c.png) !important;/* Child/Senior Citizen Focused */
+  background-image: url(/static/css/images/markers/dot-green.png) !important;/* Child/Senior Citizen Focused */
 }
 .access li ul li:nth-child(4) a {
-  background-image: url(/static/css/images/markers/dot-e1264d.png) !important;/* Garden/Farmers' Market/Healthy Eating */
+  background-image: url(/static/css/images/markers/dot-purple.png) !important;/* Garden/Farmers' Market/Healthy Eating */
 }
 .access li ul li:nth-child(5) a {
-  background-image: url(/static/css/images/markers/triangle-4ab767.png) !important;/* Physical Activity/Exercise */
+  background-image: url(/static/css/images/markers/dot-pink.png) !important;/* Physical Activity/Exercise */
 }
 .access li ul li:nth-child(6) a {
-  background-image: url(/static/css/images/markers/triangle-744edc.png) !important;/* Public Comfort (shade, seating, etc.)) */
+  background-image: url(/static/css/images/markers/dot-blue.png) !important;/* Public Comfort (shade, seating, etc.)) */
 }
 .access li ul li:nth-child(7) a {
-  background-image: url(/static/css/images/markers/dot-2654d2.png) !important;/* Gathering Space */
+  background-image: url(/static/css/images/markers/dot-teal.png) !important;/* Gathering Space */
 }
 .access li ul li:nth-child(8) a {
-  background-image: url(/static/css/images/markers/triangle-e1264d.png) !important;/* Safety */
+  background-image: url(/static/css/images/markers/dot-orange.png) !important;/* Safety */
 }
 .access li ul li:nth-child(9) a {
-  background-image: url(/static/css/images/markers/dot-fa307d.png) !important;/* Signage/Wayfinding */
+  background-image: url(/static/css/images/markers/dot-red.png) !important;/* Signage/Wayfinding */
 }
 
 
