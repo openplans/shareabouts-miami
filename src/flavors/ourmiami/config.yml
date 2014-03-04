@@ -24,11 +24,11 @@ place_types:
     rules:
       - condition: '"{{location_type}}" === "BeautificationArt"'
         icon:
-          iconUrl: /static/css/images/markers/dot-dbcf2c.png
-          iconSize: [17, 18]
+          iconUrl: /static/css/images/markers/dot-yellow.png
+          iconSize: [18, 18]
           iconAnchor: [9, 9]
         focus_icon:
-          iconUrl: /static/css/images/markers/marker-dbcf2c.png
+          iconUrl: /static/css/images/markers/marker-yellow.png
           shadowUrl: /static/css/images/marker-shadow.png
           iconSize: [25, 41]
           shadowSize: [41, 41]
@@ -38,11 +38,11 @@ place_types:
     rules:
       - condition: '"{{location_type}}" === "ChildIdea"'
         icon:
-          iconUrl: /static/css/images/markers/dot-70d52c.png
-          iconSize: [17, 18]
+          iconUrl: /static/css/images/markers/dot-green.png
+          iconSize: [18, 18]
           iconAnchor: [9, 9]
         focus_icon:
-          iconUrl: /static/css/images/markers/marker-70d52c.png
+          iconUrl: /static/css/images/markers/marker-green.png
           shadowUrl: /static/css/images/marker-shadow.png
           iconSize: [25, 41]
           shadowSize: [41, 41]
@@ -52,11 +52,11 @@ place_types:
     rules:
       - condition: '"{{location_type}}" === "GardenFarmersMarket"'
         icon:
-          iconUrl: /static/css/images/markers/dot-e1264d.png
-          iconSize: [17, 18]
+          iconUrl: /static/css/images/markers/dot-purple.png
+          iconSize: [18, 18]
           iconAnchor: [9, 9]
         focus_icon:
-          iconUrl: /static/css/images/markers/marker-e1264d.png
+          iconUrl: /static/css/images/markers/marker-purple.png
           shadowUrl: /static/css/images/marker-shadow.png
           iconSize: [25, 41]
           shadowSize: [41, 41]
@@ -66,11 +66,11 @@ place_types:
     rules:
       - condition: '"{{location_type}}" === "PhysicalActivity"'
         icon:
-          iconUrl: /static/css/images/markers/triangle-4ab767.png
-          iconSize: [17, 18]
+          iconUrl: /static/css/images/markers/dot-pink.png
+          iconSize: [18, 18]
           iconAnchor: [9, 9]
         focus_icon:
-          iconUrl: /static/css/images/markers/marker-4ab767.png
+          iconUrl: /static/css/images/markers/marker-pink.png
           shadowUrl: /static/css/images/marker-shadow.png
           iconSize: [25, 41]
           shadowSize: [41, 41]
@@ -80,11 +80,11 @@ place_types:
     rules:
       - condition: '"{{location_type}}" === "ShadePublicComfort"'
         icon:
-          iconUrl: /static/css/images/markers/triangle-744edc.png
-          iconSize: [17, 18]
+          iconUrl: /static/css/images/markers/dot-blue.png
+          iconSize: [18, 18]
           iconAnchor: [9, 9]
         focus_icon:
-          iconUrl: /static/css/images/markers/marker-744edc.png
+          iconUrl: /static/css/images/markers/marker-blue.png
           shadowUrl: /static/css/images/marker-shadow.png
           iconSize: [25, 41]
           shadowSize: [41, 41]
@@ -94,11 +94,11 @@ place_types:
     rules:
       - condition: '"{{location_type}}" === "CommunityGatheringSpace"'
         icon:
-          iconUrl: /static/css/images/markers/dot-2654d2.png
-          iconSize: [17, 18]
+          iconUrl: /static/css/images/markers/dot-teal.png
+          iconSize: [18, 18]
           iconAnchor: [9, 9]
         focus_icon:
-          iconUrl: /static/css/images/markers/marker-2654d2.png
+          iconUrl: /static/css/images/markers/marker-teal.png
           shadowUrl: /static/css/images/marker-shadow.png
           iconSize: [25, 41]
           shadowSize: [41, 41]
@@ -108,11 +108,11 @@ place_types:
     rules:
       - condition: '"{{location_type}}" === "SafeStreets"'
         icon:
-          iconUrl: /static/css/images/markers/triangle-e1264d.png
-          iconSize: [17, 18]
+          iconUrl: /static/css/images/markers/dot-orange.png
+          iconSize: [18, 18]
           iconAnchor: [9, 9]
         focus_icon:
-          iconUrl: /static/css/images/markers/marker-e1264d.png
+          iconUrl: /static/css/images/markers/marker-orange.png
           shadowUrl: /static/css/images/marker-shadow.png
           iconSize: [25, 41]
           shadowSize: [41, 41]
@@ -122,11 +122,11 @@ place_types:
     rules:
       - condition: '"{{location_type}}" === "SignageWayfinding"'
         icon:
-          iconUrl: /static/css/images/markers/dot-fa307d.png
-          iconSize: [17, 18]
+          iconUrl: /static/css/images/markers/dot-red.png
+          iconSize: [18, 18]
           iconAnchor: [9, 9]
         focus_icon:
-          iconUrl: /static/css/images/markers/marker-fa307d.png
+          iconUrl: /static/css/images/markers/marker-red.png
           shadowUrl: /static/css/images/marker-shadow.png
           iconSize: [25, 41]
           shadowSize: [41, 41]
