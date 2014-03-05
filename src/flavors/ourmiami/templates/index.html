@@ -154,21 +154,39 @@
     return view;
   }
 
-  var appViewHideListView = Shareabouts.AppView.prototype.hideListView;
-  Shareabouts.AppView.prototype.hideListView = function() {
-    appViewHideListView.call(this);
-    this.mapView.clearFilter();
+  Shareabouts.AppView.prototype.toggleListView = function() {
+    // Things are happier if we trigger the route change
+    if (this.listView.isVisible()) {
+      this.options.router.navigate('', {trigger: true});
+      this.hideListView();
+    } else {
+      this.showListView();
+      this.options.router.navigate('list', {trigger: true});
+    }
+  };
+
+  Shareabouts.AppView.prototype.onClickClosePanelBtn = function(evt) {
+    evt.preventDefault();
+    S.Util.log('USER', 'panel', 'close-btn-click');
+    if (this.mapView.locationTypeFilter) {
+      this.options.router.navigate('filter/' + this.mapView.locationTypeFilter, {trigger: true});
+    } else {
+      this.options.router.navigate('/', {trigger: true});
+    }
   };
 
   var appInitialize = Shareabouts.App.prototype.initialize;
   Shareabouts.App.prototype.initialize = function(options) {
     var self = this;
 
-    appInitialize.call(this, options);
     this.route('filter/:locationtype', 'filterMap');
 
+    appInitialize.call(this, options);
+
     this.bind('route', function(route) {
-      if (route !== 'filterMap') {
+      if (route === 'filterMap' || route === 'viewPlace') {
+        // Don't clear the filter
+      } else {
         this.appView.mapView.clearFilter();
       }
     }, this);
@@ -211,8 +229,8 @@
 
   Shareabouts.MapView.prototype.clearFilter = function() {
     var self = this;
+    this.locationTypeFilter = null;
     this.collection.each(function(model) {
-      self.layerViews[model.cid].locationTypeFilter = null;
       self.layerViews[model.cid].render();
     });
   };
@@ -220,9 +238,9 @@
   Shareabouts.MapView.prototype.filter = function(locationType) {
     var self = this;
     console.log('filter the map', arguments);
+    this.locationTypeFilter = locationType;
     this.collection.each(function(model) {
       var modelLocationType = model.get('location_type');
-      self.layerViews[model.cid].locationTypeFilter = locationType;
 
       if (modelLocationType &&
           modelLocationType.toUpperCase() === locationType.toUpperCase()) {
@@ -235,12 +253,24 @@
 
   var layerViewShow = Shareabouts.LayerView.prototype.show;
   Shareabouts.LayerView.prototype.show = function() {
-    if (!this.locationTypeFilter ||
-        this.locationTypeFilter.toUpperCase() === this.model.get('location_type').toUpperCase()) {
+    if (!this.options.mapView.locationTypeFilter ||
+      this.options.mapView.locationTypeFilter.toUpperCase() === this.model.get('location_type').toUpperCase()) {
       layerViewShow.call(this);
     } else {
       this.hide();
     }
+  };
+
+  Shareabouts.MapView.prototype.addLayerView = function(model) {
+    this.layerViews[model.cid] = new S.LayerView({
+      model: model,
+      router: this.options.router,
+      map: this.map,
+      placeLayers: this.placeLayers,
+      placeTypes: this.options.placeTypes,
+      // to access the filter
+      mapView: this
+    });
   };
 
   $(document).on('click', 'a.why-sign-in', function(evt) {
