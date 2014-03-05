@@ -274,8 +274,12 @@
   };
 
   $(document).on('click', 'a.why-sign-in', function(evt) {
-      evt.preventDefault();
+    evt.preventDefault();
   });
+
+  $(document).on('click', '.activity-item a', function(evt) {
+    window.app.appView.mapView.clearFilter();
+  })
 
 }(Shareabouts));
 
