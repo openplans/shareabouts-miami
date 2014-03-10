@@ -293,6 +293,9 @@ pages:
   - title: _(About)
     slug: about
     name: overview
+  - title: _(FAQ)
+    slug: faq
+    name: faq
   - title: _(Contact us)
     slug: contact
     name: features
