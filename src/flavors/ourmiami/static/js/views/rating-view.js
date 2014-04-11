@@ -18,10 +18,25 @@ var Shareabouts = Shareabouts || {};
     render: function() {
       var self = this,
           user = S.bootstrapped.currentUser || {'groups': []},
-          group = _.find(user.groups, function(group) { return _.isEqual(group, {'dataset': S.bootstrapped.datasetUrl, 'name': 'judges'}); });
-
-      if (!user || !group) { return this; }
-
+          
+          // get our two judge groups
+          group1 = _.find(user.groups, function(group) { return _.isEqual(group, {'dataset': S.bootstrapped.datasetUrl, 'name': 'judges-1'}); });
+          group2 = _.find(user.groups, function(group) { return _.isEqual(group, {'dataset': S.bootstrapped.datasetUrl, 'name': 'judges-2'}); });
+          
+         // see which judging group this place is in.
+         var judgeGroup = this.collection.options.placeModel.get("judgeGroup");
+         
+         // if the place is not in a judging group or a user
+         if (!judgeGroup || !user || !(group1 || group2) ) { return this; }
+         
+         var judge1, judge2;
+         if (judgeGroup == 1) { judge1 = true; } 
+         if (judgeGroup == 2) { judge2 = true; } 
+          
+          // stop if the judge doesn't match the place juding group
+          if (group1 && judge2 ) { return this; }
+          if (group2 && judge1 ) { return this; }
+      
       // I don't understand why we need to redelegate the event here, but they
       // are definitely unbound after the first render.
       this.delegateEvents();
