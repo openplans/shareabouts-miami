@@ -31,7 +31,7 @@ var Shareabouts = Shareabouts || {};
          
          var judge1, judge2;
          if (judgeGroup == 1) { judge1 = true; } 
-         if (judgeGroup == 2) { judge2 = true; } 
+         if (judgeGroup == 3) { judge2 = true; } 
           
           // stop if the judge doesn't match the place juding group
           if (group1 && judge2 ) { return this; }
