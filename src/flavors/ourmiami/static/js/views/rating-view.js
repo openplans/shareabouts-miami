@@ -1,3 +1,5 @@
+/*globals _ Handlebars Backbone */
+
 var Shareabouts = Shareabouts || {};
 
 (function(S, $, console){
@@ -18,25 +20,30 @@ var Shareabouts = Shareabouts || {};
     render: function() {
       var self = this,
           user = S.bootstrapped.currentUser || {'groups': []},
-          
+
           // get our two judge groups
-          group1 = _.find(user.groups, function(group) { return _.isEqual(group, {'dataset': S.bootstrapped.datasetUrl, 'name': 'judges-1'}); });
-          group2 = _.find(user.groups, function(group) { return _.isEqual(group, {'dataset': S.bootstrapped.datasetUrl, 'name': 'judges-2'}); });
-          
-         // see which judging group this place is in.
-         var judgeGroup = this.collection.options.placeModel.get("judgeGroup");
-         
-         // if the place is not in a judging group or a user
-         if (!judgeGroup || !user || !(group1 || group2) ) { return this; }
-         
-         var judge1, judge2;
-         if (judgeGroup == 1) { judge1 = true; } 
-         if (judgeGroup == 3) { judge2 = true; } 
-          
-          // stop if the judge doesn't match the place juding group
-          if (group1 && judge2 ) { return this; }
-          if (group2 && judge1 ) { return this; }
-      
+          group1 = _.find(user.groups, function(group) { return _.isEqual(group, {'dataset': S.bootstrapped.datasetUrl, 'name': 'judges-1'}); }),
+          group2 = _.find(user.groups, function(group) { return _.isEqual(group, {'dataset': S.bootstrapped.datasetUrl, 'name': 'judges-2'}); }),
+
+          // see which judging group this place is in.
+          judgeGroup = this.collection.options.placeModel.get("judgeGroup"),
+
+          judge1, judge2;
+
+      // if the place is not in a judging group or a user
+      if (!judgeGroup || !user || !(group1 || group2) ) { return this; }
+
+      if (judgeGroup === '1') { judge1 = true; }
+      if (judgeGroup === '3') { judge2 = true; }
+
+      // if the judge doesn't match the place juding group
+      if ((group1 && judge2) || (group2 && judge1)) {
+        // show a helpful message
+        this.$el.html('<p class="user-rating-prompt" style="margin-bottom:1em">No judging required</p>');
+
+        return this;
+      }
+
       // I don't understand why we need to redelegate the event here, but they
       // are definitely unbound after the first render.
       this.delegateEvents();

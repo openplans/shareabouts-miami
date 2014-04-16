@@ -2,13 +2,13 @@
 
   {{#if target.submitter}}
   <li class="activity-item clearfix">
-    <a href="/place/{{ place.id }}" data-action-type="{{ target_type }}" data-place-id="{{ place.id }}">{{#_}}<strong class="submitter">
+    <a href="/place/{{ place.id }}{{#is target_type 'comments'}}/response/{{ target.id }}{{/is}}" data-action-type="{{ target_type }}" data-place-id="{{ place.id }}">{{#_}}<strong class="submitter">
       <img src="{{ target.submitter.avatar_url }}" class="avatar" /> {{ target.submitter.name }}
     </strong>
     <span class="action">{{ action }}</span>
-    <strong class="place-title">{{ place.title }}</strong> 
-    <br><small>a{{#if place.type_starts_with_vowel }}n{{/if }} 
-    <span class="place-type">{{ place.place_type_label }}</span> 
+    <strong class="place-title">{{ place.title }}</strong>
+    <br><small>a{{#if place.type_starts_with_vowel }}n{{/if }}
+    <span class="place-type">{{ place.place_type_label }}</span>
     idea</small>
     {{/_}}</a>
   </li>
@@ -17,7 +17,7 @@
 {{^}}
 
   <li class="activity-item clearfix">
-    <a href="/place/{{ place.id }}" data-action-type="{{ target_type }}" data-place-id="{{ place.id }}">{{#_}}<strong class="submitter">
+    <a href="/place/{{ place.id }}{{#is target_type 'comments'}}/response/{{ target.id }}{{/is}}" data-action-type="{{ target_type }}" data-place-id="{{ place.id }}">{{#_}}<strong class="submitter">
     {{#if target.submitter}}
       <img src="{{ target.submitter.avatar_url }}" class="avatar" /> {{ target.submitter.name }}
     {{^}}
@@ -25,9 +25,9 @@
     {{/if}}
     </strong>
     <span class="action">{{ action }}</span>
-    <strong class="place-title">{{ place.title }}</strong> 
-    <br><small>a{{#if place.type_starts_with_vowel }}n{{/if }} 
-    <span class="place-type">{{ place.place_type_label }}</span> 
+    <strong class="place-title">{{ place.title }}</strong>
+    <br><small>a{{#if place.type_starts_with_vowel }}n{{/if }}
+    <span class="place-type">{{ place.place_type_label }}</span>
     idea</small>
     {{/_}}</a>
   </li>
