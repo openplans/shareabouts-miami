@@ -36,8 +36,9 @@ var Shareabouts = Shareabouts || {};
       if (judgeGroup === '1') { judge1 = true; }
       if (judgeGroup === '3') { judge2 = true; }
 
+      // Don't judge this at all because it's not a group we care about OR
       // if the judge doesn't match the place juding group
-      if ((group1 && judge2) || (group2 && judge1)) {
+      if ((!judge1 && !judge2) || (group1 && judge2) || (group2 && judge1)) {
         // show a helpful message
         this.$el.html('<p class="user-rating-prompt" style="margin-bottom:1em">No judging required</p>');
 
