@@ -155,6 +155,16 @@ form .signed-in-as {
   border-bottom: 0;
 }
 
+/* hiding comment fields at end of submissions */
+
+div #reply {
+  display: none;
+}
+
+a.reply-link.btn.btn-small {
+  display: none;
+}
+
 /* =Header
 -------------------------------------------------------------- */
 
