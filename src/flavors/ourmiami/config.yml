@@ -168,7 +168,7 @@ place_types:
           shadowUrl: /static/css/images/marker-shadow.png
           iconSize: [25, 41]
           shadowSize: [41, 41]
-          iconAnchor: [12, 41]    
+          iconAnchor: [12, 41]
   SafeStreets:
     label: _(Safety)
     rules:
@@ -219,7 +219,7 @@ place_types:
           iconSize: [25, 41]
           shadowSize: [41, 41]
           iconAnchor: [12, 41]
-              
+
 activity:
   enabled: true
   interval: 30000
