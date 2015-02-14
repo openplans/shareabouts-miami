@@ -1,5 +1,8 @@
 from django.conf.urls import patterns, include, url
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
+from django.contrib import admin
+
+admin.autodiscover()
 
 # Uncomment the next two lines to enable the admin:
 # from django.contrib import admin
@@ -24,6 +27,13 @@ urlpatterns = staticfiles_urlpatterns() + patterns('',
     # url(r'^admin/', include(admin.site.urls)),
 
     url(r'^generate-error$', generate_error),
+    url(r'^admin/', include(admin.site.urls)),
     url(r'^choose-language$', 'django.views.i18n.set_language', name='set_language'),
     url(r'^', include('sa_web.urls')),
 )
+
+from django.conf import settings
+if settings.SHAREABOUTS['DATASET_ROOT'].startswith('/'):
+    urlpatterns = patterns('',
+        url(r'^full-api/', include('sa_api_v2.urls')),
+    ) + urlpatterns

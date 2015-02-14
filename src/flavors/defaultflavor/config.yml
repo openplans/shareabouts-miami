@@ -6,16 +6,27 @@ app:
   name: Shareabouts
   # Meta description that will show up in Google search results
   meta_description: _(Shareabouts is a mapping tool to gather crowd sourced public input. Use it to collect suggested locations and comments in a social, engaging process.)
+  # Meta author that will show up in Google search results
+  meta_author: OpenPlans.org
+
 
   # When the map loads, existing places will be loaded in chunks. By default,
   # the size of the chunks will be a reasonable default dictated by the API
   # server. If you would like to override the chunk size, use this setting:
   # places_page_size: 100
 
+  # Optional. List view is supported by default. Set to false to disable.
+  # list_enabled: false
+
 # Settings for map and layer configs
 map:
   geolocation_enabled: true
   geolocation_onload: false
+
+  geocoding_enabled: true
+  geocode_field_label: _(Enter an address...)
+  geocode_bounding_box: [39.830159, -75.478821, 40.167331, -74.781189]  # top, left, bottom, right
+
   options:
     center:
       lat: 39.9523524
@@ -24,8 +35,8 @@ map:
     minZoom: 10
     maxZoom: 17
   layers:
-    - url: http://{s}.tiles.mapbox.com/v3/openplans.map-dmar86ym/{z}/{x}/{y}.png
-      attribution: '&copy; OpenStreetMap contributors, CC-BY-SA. <a href="http://mapbox.com/about/maps" target="_blank">Terms &amp; Feedback</a>'
+    - url: http://{s}.tiles.mapbox.com/v3/examples.map-i87786ca/{z}/{x}/{y}.png
+      attribution: '&copy; OpenStreetMap contributors, CC-BY-SA. <a href="http://mapbox.com/about/maps" target="_blank">Terms &amp; Feedback</a>. Geocoding Courtesy of <a href="http://www.mapquest.com/" target="_blank">MapQuest</a> <img src="http://developer.mapquest.com/content/osm/mq_logo.png">.'
     - url: /static/data/philadelphia.geojson
       type: json
       rules:
@@ -42,44 +53,41 @@ place_types:
   landmark:
     label: _(Landmark)
     rules:
-      - condition: '"{{location_type}}" === "landmark"'
-        # Display landmarks as icons
+      - condition: '"{{location_type}}" === "landmark" && {{map.zoom}} < 13 && {{layer.focused}} === false'
+        # Display landmarks as circles (vectors) when zoomed out
+
+        style:
+          color: '#0d85e9'
+          radius: 3
+          weight: 1
+          opacity: 0.9
+          fillOpacity: 1
+
+      - condition: '"{{location_type}}" === "landmark" && {{map.zoom}} >= 13 && {{layer.focused}} === false'
+        # Display landmarks as icons when zoomed in
 
         icon:
           iconUrl: /static/css/images/markers/dot-0d85e9.png
           iconSize: [17, 18]
           iconAnchor: [9, 9]
-        focus_icon:
+
+      - condition: '"{{location_type}}" === "landmark" && {{layer.focused}} === true'
+        # Display landmarks as icons when zoomed in
+
+        icon:
           iconUrl: /static/css/images/markers/marker-0d85e9.png
           shadowUrl: /static/css/images/marker-shadow.png
           iconSize: [25, 41]
           shadowSize: [41, 41]
           iconAnchor: [12, 41]
 
-        # style:
-        #   color: '#0d85e9'
-        #   radius: 8
-        #   weight: 1
-        #   opacity: 0.9
-        #   fillOpacity: 0.4
-        # focus_style:
-        #   color: '#0d85e9'
-        #   radius: 16
-        #   weight: 1
-        #   opacity: 0.9
-        #   fillOpacity: 0.4
-
   park:
     label: _(Park)
     rules:
-      - condition: '"{{location_type}}" === "park"'
+      - condition: '"{{location_type}}" === "park" && {{layer.focused}}'
         # Show parks that are points as icons...
 
         icon:
-          iconUrl: /static/css/images/markers/dot-4bbd45.png
-          iconSize: [17, 18]
-          iconAnchor: [9, 9]
-        focus_icon:
           iconUrl: /static/css/images/markers/marker-4bbd45.png
           shadowUrl: /static/css/images/marker-shadow.png
           iconSize: [25, 41]
@@ -90,13 +98,22 @@ place_types:
 
         style:
           color: '#4bbd45'
-          radius: 8
-          weight: 1
+          weight: 3
           opacity: 0.9
-          fillOpacity: 0.4
-        focus_style:
+          fillOpacity: 0.7
+
+      - condition: '"{{location_type}}" === "park"'
+        # Show parks that are points as icons...
+
+        icon:
+          iconUrl: /static/css/images/markers/dot-4bbd45.png
+          iconSize: [17, 18]
+          iconAnchor: [9, 9]
+
+        # ...and parks that are polygons as shapes.
+
+        style:
           color: '#4bbd45'
-          radius: 16
           weight: 1
           opacity: 0.9
           fillOpacity: 0.4
@@ -106,17 +123,6 @@ place_types:
     rules:
       - condition: '"{{location_type}}" === "school" && {{submission_sets.comments.length}} > 0'
         # Display schools as circles
-
-        # icon:
-        #   iconUrl: /static/css/images/markers/dot-f95016.png
-        #   iconSize: [17, 18]
-        #   iconAnchor: [9, 9]
-        # focus_icon:
-        #   iconUrl: /static/css/images/markers/marker-f95016.png
-        #   shadowUrl: /static/css/images/marker-shadow.png
-        #   iconSize: [25, 41]
-        #   shadowSize: [41, 41]
-        #   iconAnchor: [12, 41]
 
         style:
           color: '#f95016'
@@ -130,6 +136,7 @@ place_types:
           weight: 4
           opacity: 0.9
           fillOpacity: 0.4
+
       - condition: '"{{location_type}}" === "school"'
         style:
           color: '#f95016'
@@ -162,11 +169,15 @@ place:
   action_text: _(created)
   anonymous_name: _(Someone)
   submit_button_label: _(Submit)
+
+  location_item_name: location
+
   items:
     - prompt: _(Your Name)
       type: text
       name: submitter_name
       optional: true
+      sticky: true
       attrs:
         - key: placeholder
           value: _(Name)
@@ -176,6 +187,7 @@ place:
       type: text
       name: private-submitter_email
       optional: true
+      sticky: true
       attrs:
         - key: placeholder
           value: _(Email address)
@@ -184,12 +196,12 @@ place:
     - prompt: _(Location Name)
       type: text
       name: name
+      optional: true
       attrs:
         - key: placeholder
           value: _(Location Name)
         - key: size
           value: 30
-        - key: required
     - prompt: _(Location Type)
       type: select
       options:
@@ -225,6 +237,8 @@ survey:
 
   # Response config
   show_responses: true
+  # Set to true if the user should only submit a survey once
+  single_submission: false
   response_name: _(comment)
   response_plural_name: _(comments)
   action_text: _(commented on)
@@ -244,6 +258,7 @@ survey:
     - prompt: _(Your Name)
       type: text
       name: submitter_name
+      sticky: true
 
 support:
   submission_type: support
@@ -257,15 +272,17 @@ pages:
   - title: _(About)
     slug: about
     name: overview
-    # start_page: true
+    start_page: true
 
-  - title: _(Why Shareabouts?)
-    slug: why
-    url: /static/pages/why.html
+  - title: _(More...)
+    pages:
+      - title: _(Why Shareabouts?)
+        slug: why
+        url: /static/pages/why.html
 
-  - title: _(Features)
-    slug: features
-    url: /static/pages/features.html
+      - title: _(Features)
+        slug: features
+        url: /static/pages/features.html
 
   - title: _(Links)
     pages:
