@@ -165,6 +165,10 @@
     }
   };
 
+  Shareabouts.AppView.prototype.getListRoutes = function() {
+    return ['showList', 'filterMap'];
+  };
+
   Shareabouts.AppView.prototype.onClickClosePanelBtn = function(evt) {
     evt.preventDefault();
     S.Util.log('USER', 'panel', 'close-btn-click');
@@ -184,10 +188,11 @@
     appInitialize.call(this, options);
 
     this.bind('route', function(route) {
-      if (route === 'filterMap' || route === 'viewPlace') {
+      if (route === 'filterMap' || route === 'viewPlace' || route === 'showList' || route === 'viewMap') {
         // Don't clear the filter
       } else {
         this.appView.mapView.clearFilter();
+        this.appView.listView.clearFilters({});
       }
     }, this);
 
@@ -213,17 +218,30 @@
   };
 
   Shareabouts.App.prototype.filterMap = function(locationType) {
-    this.appView.hidePanel();
-    this.appView.hideNewPin();
-    this.appView.destroyNewModels();
+    if (locationType !== 'all') {
+      this.appView.mapView.filter(locationType);
+      this.appView.listView.filter({'location_type': locationType});
+    } else {
+      // If the filter is 'all', we're unsetting the filter.
+      this.appView.mapView.clearFilter();
+      this.appView.listView.clearFilters();
 
-    this.appView.mapView.filter(locationType);
+      if (this.appView.listView.isVisible()) {
+        this.navigate('/list', {trigger: false});
+      } else {
+        this.navigate('/', {trigger: false});
+      }
+    }
   };
 
   var appViewMap = Shareabouts.App.prototype.viewMap;
   Shareabouts.App.prototype.viewMap = function() {
+    if (this.appView.mapView.locationTypeFilter) {
+      // If there's a filter applied, actually go to that filtered route.
+      this.navigate('/filter/' + this.appView.mapView.locationTypeFilter, {trigger: false});
+    }
+
     appViewMap.call(this);
-    this.appView.mapView.clearFilter();
   }
 
   Shareabouts.MapView.prototype.clearFilter = function() {
@@ -278,6 +296,7 @@
 
   $(document).on('click', '.activity-item a', function(evt) {
     window.app.appView.mapView.clearFilter();
+    window.app.appView.listView.clearFilters();
   })
 
 }(Shareabouts));

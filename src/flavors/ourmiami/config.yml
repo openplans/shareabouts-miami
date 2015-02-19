@@ -397,7 +397,7 @@ pages:
     pages:
       - title: All
         external: true
-        url: /
+        url: /filter/all
       - title: _(Beautification/Art)
         url: /filter/beautificationart
         external: true
