@@ -255,6 +255,23 @@ a.reply-link.btn.btn-small {
   background-image: url(/static/css/images/markers/dot-red.png) !important;/* Signage/Wayfinding */
 }
 
+#current-filter-type {
+  position: absolute;
+  width: 100%;
+  margin-top: -0.4em;
+  font-size: 0.6rem;
+  font-weight: bold;
+}
+
+#current-filter-type.beautificationart { color: #DBEF16; }
+#current-filter-type.childidea { color: #86AD11; }
+#current-filter-type.gardenfarmersmarket { color: #7D4199; }
+#current-filter-type.physicalactivity { color: #E85BFF; }
+#current-filter-type.shadepubliccomfort { color: #00AEDB; }
+#current-filter-type.communitygatheringspace { color: #6DF8FF; }
+#current-filter-type.safestreets { color: #EF7300; }
+#current-filter-type.signagewayfinding { color: #DF4662; }
+
 
 /* =The Ticker
 -------------------------------------------------------------- */

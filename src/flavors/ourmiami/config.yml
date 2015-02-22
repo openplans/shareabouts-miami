@@ -394,6 +394,7 @@ pages:
     slug: contact
     name: features
   - title: Filter Places
+    slug: filter-type
     pages:
       - title: All
         external: true

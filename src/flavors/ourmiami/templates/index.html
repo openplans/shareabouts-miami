@@ -218,13 +218,37 @@
   };
 
   Shareabouts.App.prototype.filterMap = function(locationType) {
+    // Get or create an element between the "Filter Places" link and the list of options
+    var $filterIndicator = $('#current-filter-type');
+    if ($filterIndicator.length === 0) {
+      $filterIndicator = $('<div id="current-filter-type"/>')
+        .insertAfter($('.menu-item-filter-type > a:first-child'));
+    }
+
+    // Get the menu information for the current location type
+    var filterMenu = _.findWhere(S.Config.pages, {'slug': 'filter-type'});
+    var menuItem = _.findWhere(filterMenu.pages, {'url': '/filter/' + locationType});
+
     if (locationType !== 'all') {
       this.appView.mapView.filter(locationType);
       this.appView.listView.filter({'location_type': locationType});
+
+      // Show the menu item title with the coresponding style
+      if (menuItem) {
+        $filterIndicator
+          .removeClass()
+          .addClass(locationType)
+          .html(menuItem.title);
+      }
+
     } else {
       // If the filter is 'all', we're unsetting the filter.
       this.appView.mapView.clearFilter();
       this.appView.listView.clearFilters();
+
+      $filterIndicator
+        .removeClass()
+        .empty();
 
       if (this.appView.listView.isVisible()) {
         this.navigate('/list', {trigger: false});
