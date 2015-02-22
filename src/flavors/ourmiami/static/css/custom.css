@@ -261,8 +261,11 @@ a.reply-link.btn.btn-small {
   margin-top: -0.4em;
   font-size: 0.6rem;
   font-weight: bold;
+  background-color: white;
+  border-top: 1px solid black;
 }
 
+#current-filter-type.unfiltered { background: none; border: none; }
 #current-filter-type.beautificationart { color: #DBEF16; }
 #current-filter-type.childidea { color: #86AD11; }
 #current-filter-type.gardenfarmersmarket { color: #7D4199; }
@@ -548,6 +551,10 @@ button.star.is-full:disabled {
   }
   .sign-in-menu:before {
     border-bottom-color: #333;
+  }
+  #current-filter-type {
+    background: none;
+    border: none;
   }
   #content {
     box-shadow: -0.375em 0 0.325em rgba(0,0,0,0.25);
