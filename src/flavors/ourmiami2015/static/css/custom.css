@@ -31,9 +31,6 @@ a:hover {
   font-weight: 800;
   text-shadow: none;
 }
-.drag-marker-instructions + h4 {
-  display: none;
-}
 
 /* Buttons */
 .btn,
@@ -118,7 +115,6 @@ label {
 }
 #place-submitter_name + .or-sign-in {
   font-size: 0.75em;
-  display: none;
 }
 #place-submitter_name + .or-sign-in > .twitter-btn {
   margin-left: 0.375em;
@@ -155,16 +151,6 @@ form .signed-in-as {
   border-bottom: 0;
 }
 
-/* hiding comment fields at end of submissions */
-
-div #reply {
-  display: none;
-}
-
-a.reply-link.btn.btn-small {
-  display: none;
-}
-
 /* =Header
 -------------------------------------------------------------- */
 
@@ -198,10 +184,6 @@ a.reply-link.btn.btn-small {
   width: 4em;
 }
 .ie8 #site-logo {
-}
-
-.why-sign-in {
-  display: none;
 }
 
 /* Navigation */
@@ -632,9 +614,6 @@ button.star.is-full:disabled {
     text-transform: uppercase;
     z-index: 1;
   }
-  a.why-sign-in span {
-    display: none;
-  }
   a.why-sign-in:hover span {
     display: block;
     position: absolute;
@@ -704,4 +683,43 @@ button.star.is-full:disabled {
 
 /* High Resolution Displays */
 @media only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2) {
+}
+
+
+
+/* hiding comment fields and auth */
+
+.drag-marker-instructions + h4 {
+  display: none;
+}
+
+div #reply {
+  display: none;
+}
+
+a.reply-link.btn.btn-small {
+  display: none;
+}
+
+#auth-nav-container {
+  display: none;
+}
+
+#place-submitter_name + .or-sign-in {
+  display: none;
+}
+
+.why-sign-in {
+  display: none;
+}
+
+.support .user-support:hover {
+  background-color: #dbef16;
+  color: #000;
+  cursor: default;
+}
+
+.support .user-support:hover label {
+  background-color: transparent;
+  color: #000;
 }
