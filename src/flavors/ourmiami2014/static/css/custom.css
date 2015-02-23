@@ -1,0 +1,722 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400italic,800italic,400,800);
+
+/* =Typography
+-------------------------------------------------------------- */
+
+body, select, input, textarea {
+  font-family: 'Open Sans', sans-serif;
+}
+.openplans-logo {
+  font-family: "Helvetica Neue", Helvetica, sans-serif !important;
+}
+
+/* Links */
+a, a:active, a:visited {
+  color: #00afdb;
+}
+a:hover {
+  color: #0087a8;
+}
+
+#sign-in-btn {
+  color: #00afdb;
+}
+#sign-in-btn:hover {
+  color: #0087a8;
+}
+
+.drag-marker-instructions {
+  background-color: #7C4199;
+  color: #fff;
+  font-weight: 800;
+  text-shadow: none;
+}
+.drag-marker-instructions + h4 {
+  display: none;
+}
+
+/* Buttons */
+.btn,
+.btn:visited,
+.btn:link {
+  font-weight: 400;
+  background-color: #dbef16;
+  color: #000;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+.btn:hover {
+  background-color: #00afdb;
+  color: #fff;
+}
+#add-place,
+#add-place:hover {
+  font-weight: 800;
+  box-shadow: -3px 3px 10px rgba(85, 85, 85, 0.5);
+}
+.submit-btn {
+  font-size: 1.25em;
+  padding: 0.5em 1em;
+}
+.user-support label {
+  color: #000;
+  font-weight: 400;
+}
+.user-support:hover label {
+  background-color: #00afdb;
+  color: #fff;
+}
+
+/* Forms */
+input[type=date],
+input[type=datetime],
+input[type=datetime-local],
+input[type=email],
+input[type=month],
+input[type=number],
+input[type=password],
+input[type=tel],
+input[type=text],
+input[type=time],
+input[type=url],
+input[type=week],
+textarea {
+  border: 3px solid #fff;
+  background-color: #ebebeb;
+  box-shadow: inset 0px 0px 5px rgba(0,0,0,0.25);
+  border-radius: 6px;
+  color: #181818;
+}
+input[type=date]:focus,
+input[type=datetime]:focus,
+input[type=datetime-local]:focus,
+input[type=email]:focus,
+input[type=month]:focus,
+input[type=number]:focus,
+input[type=password]:focus,
+input[type=tel]:focus,
+input[type=text]:focus,
+input[type=time]:focus,
+input[type=url]:focus,
+input[type=week]:focus,
+textarea:focus {
+  background-color: #777;
+  box-shadow: 0px 0px 5px rgba(0,0,0,0.5) inset;
+  color: #fff;
+  outline: 0;
+}
+.place-form textarea {
+  height: 7.5em;
+}
+textarea#place-title {
+  height: 4.25em;
+}
+label {
+  color: #555;
+  font-weight: 800;
+}
+#place-submitter_name + .or-sign-in {
+  font-size: 0.75em;
+  display: none;
+}
+#place-submitter_name + .or-sign-in > .twitter-btn {
+  margin-left: 0.375em;
+}
+
+form .signed-in-as {
+  width: 100%;
+}
+
+.textarea-container {
+  display: block;
+  position: relative;
+}
+.remaining-characters {
+  position: absolute;
+  bottom: 100%;
+  right: 1em;
+  font-size: 0.75em;
+  font-weight: 800;
+  line-height: 1.5;
+  background: #fff url("http://ourmiami.org/wp-content/themes/engage/img/bg-border-lined-dots.png") left top repeat;
+  margin-bottom: -3px;
+  padding: 4px 8px 2px 8px;
+  border-radius: 4px 4px 0 0;
+}
+.remaining-characters.warning {
+  background-color: Crimson;
+  color: #fff;
+  text-shadow: 0 0 3px #7C4199;
+}
+
+#add-place-btn-container {
+  background: #fff;
+  border-bottom: 0;
+}
+
+/* hiding comment fields at end of submissions */
+
+div #reply {
+  display: none;
+}
+
+a.reply-link.btn.btn-small {
+  display: none;
+}
+
+/* =Header
+-------------------------------------------------------------- */
+
+#site-header {
+  color: #181818;
+  background-color: #fff;
+  box-shadow: 0 5px 10px rgba(85, 85, 85, 0.5), inset 0 -3px 0 #00afdb, inset 0 3px 0 #dbef16;
+}
+.ie8 #site-header {
+  border-bottom: 1px solid #ddd;
+}
+
+/* Logo */
+#site-title {
+  height: 2.5em;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+#site-title a {
+  height: 100%;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+#site-logo {
+  height: 100%;
+  width: auto;
+}
+.ie8 #site-title a {
+  width: 4em;
+}
+.ie8 #site-logo {
+}
+
+.why-sign-in {
+  display: none;
+}
+
+/* Navigation */
+#nav-btn {
+  font-family: "Helvetica Neue", Arial !important;
+  background: #eee;
+  color: #bbb;
+  text-shadow: none;
+}
+.access a:visited,
+.access a:active,
+.access a:link {
+  background: #dbef16;
+  color: #181818;
+}
+
+/* icons in filter menu */
+.access li:nth-child(3) > a {
+  display: none;
+}
+.access li ul li a {
+  background: #fff url() 5px center no-repeat scroll !important;
+  text-align: left !important;
+  padding: 10px 10px 10px 30px !important;
+}
+.access li ul li a:hover {
+  background-color: #dbef16 !important;
+}
+.access li ul li:nth-child(2) a {
+  background-image: url(/static/css/images/markers/dot-yellow.png) !important;/* Beautification/Art */
+}
+.access li ul li:nth-child(3) a {
+  background-image: url(/static/css/images/markers/dot-green.png) !important;/* Child/Senior Citizen Focused */
+}
+.access li ul li:nth-child(4) a {
+  background-image: url(/static/css/images/markers/dot-purple.png) !important;/* Garden/Farmers' Market/Healthy Eating */
+}
+.access li ul li:nth-child(5) a {
+  background-image: url(/static/css/images/markers/dot-pink.png) !important;/* Physical Activity/Exercise */
+}
+.access li ul li:nth-child(6) a {
+  background-image: url(/static/css/images/markers/dot-blue.png) !important;/* Public Comfort (shade, seating, etc.)) */
+}
+.access li ul li:nth-child(7) a {
+  background-image: url(/static/css/images/markers/dot-teal.png) !important;/* Gathering Space */
+}
+.access li ul li:nth-child(8) a {
+  background-image: url(/static/css/images/markers/dot-orange.png) !important;/* Safety */
+}
+.access li ul li:nth-child(9) a {
+  background-image: url(/static/css/images/markers/dot-red.png) !important;/* Signage/Wayfinding */
+}
+
+#current-filter-type {
+  position: absolute;
+  width: 100%;
+  margin-top: -0.4em;
+  font-size: 0.6rem;
+  font-weight: bold;
+  background-color: white;
+  border-top: 1px solid black;
+}
+
+#current-filter-type.unfiltered { background: none; border: none; }
+#current-filter-type.beautificationart { color: #DBEF16; }
+#current-filter-type.childidea { color: #86AD11; }
+#current-filter-type.gardenfarmersmarket { color: #7D4199; }
+#current-filter-type.physicalactivity { color: #E85BFF; }
+#current-filter-type.shadepubliccomfort { color: #00AEDB; }
+#current-filter-type.communitygatheringspace { color: #6DF8FF; }
+#current-filter-type.safestreets { color: #EF7300; }
+#current-filter-type.signagewayfinding { color: #DF4662; }
+
+
+/* =The Ticker
+-------------------------------------------------------------- */
+
+#ticker {
+  background: #fff url("http://ourmiami.org/wp-content/themes/engage/img/background.png") center bottom repeat scroll;
+  box-shadow: -5px 0 10px rgba(85, 85, 85, 0.5);
+}
+.recent-points a {
+  color: #00afdb;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #ddd;
+}
+.recent-points a:hover {
+  color: #fff;
+  background: #00afdb;
+  border-color: rgba(0,0,0,0.1);
+}
+.recent-points small,
+.recent-points .submitter,
+.recent-points .action {
+  color: #777;
+}
+.recent-points small {
+  font-size: 0.75em;
+  font-weight: 400;
+  letter-spacing: -0.03em;
+}
+.recent-points a:hover small,
+.recent-points a:hover .submitter,
+.recent-points a:hover .action {
+  color: #fff;
+}
+
+
+/* =Content: Pages & Places
+-------------------------------------------------------------- */
+
+#content {
+  box-shadow: 0 -0.325em 0.325em rgba(0,0,0,0.25);
+}
+
+/* Close Button */
+a.close-btn {
+  box-shadow: 0 -0.325em 0.325em rgba(0,0,0,0.25);
+}
+
+/* ioby stuff */
+.ioby-details {
+  background: url("http://ourmiami.org/wp-content/themes/engage/img/bg-border-lined-dots.png") left top repeat;
+  margin-bottom: 1.5em;
+}
+.ioby-project-title {
+  background-color: #fff;
+  padding: 10px;
+  margin: 0 5px 10px 5px;
+  position: relative;
+  top: 5px;
+  font-size: 0.875em;
+}
+.ioby-project-title .ioby-logo-small {
+  height: 1.5em;
+  width: auto;
+  float: right;
+  margin: 0 0 0 0.5em;
+}
+a.ioby-project-link {
+  display: block;
+  text-decoration: none;
+  padding: 10px;
+  margin: 5px 5px 0 5px;
+  background-color: #00afdb;
+  color: #fff;
+  font-size: 0.75em;
+  text-transform: uppercase;
+  text-align: center;
+  position: relative;
+  top: -5px;
+}
+a.ioby-project-link:hover {
+  background-color: #0087a8;
+  color: #fff;
+}
+.ioby-funding-info {
+  margin: 0;
+  padding: 0 5px;
+  text-transform: uppercase;
+}
+.ioby-funding-info > span {
+  float: left;
+  min-width: 50%;
+  background-color: #fff;
+  padding: 10px;
+  margin: 0 0 5px;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+/* Place Details */
+h1.my-idea-is {
+  font-size: 1.375em;
+  margin-bottom: 0.75em;
+}
+.place-list h1.my-idea-is {
+  margin-bottom: 0.375em;
+  margin-right: 6em;
+}
+.place-label {
+  font-size: 0.75em;
+  text-transform: uppercase;
+}
+.place-value-infolink > a {
+  word-wrap: break-word;
+}
+
+/* List View */
+#list-search {
+  border: 0;
+}
+.list-search-form input.submit-btn {
+  font-size: 1em;
+  padding-right: 0.75em;
+  padding-left: 0.75em;
+}
+
+.place-list .place-items {
+  margin-right: 8em;
+}
+
+
+/* =Footer
+-------------------------------------------------------------- */
+
+#colophon {
+  background-color: #f4f6f8;
+  color: #555;
+  box-shadow: inset 0 5px 10px rgba(85, 85, 85, 0.25);
+}
+a.shareabouts-logo {
+  color: #00aaff;
+}
+a.shareabouts-logo:hover {
+  color: #007fbf;
+  border-bottom: 1px solid #00aaff;
+}
+#powered-by a.openplans-logo {
+  color: #ff9a52;
+}
+#powered-by a.openplans-logo:hover {
+  color: #ff8b38;
+  border-bottom: 1px solid #ffb885;
+}
+.footer-logos {
+  display: block;
+  text-align: center;
+}
+.footer-logo {
+  display: block;
+  margin: 1em auto;
+}
+.ourmiami-logo,
+.ioby-logo,
+.miamiherald-logo,
+.hfsf-logo {
+  height: 3em;
+  width: auto;
+}
+.footer-logo .prompt {
+  display: none;
+}
+
+
+/* =Rating, Voting, Judges
+-------------------------------------------------------------- */
+
+.rating {}
+.user-rating {
+  float: right;
+  margin-bottom: 0.75em;
+  border: 2px solid #7C4199;
+  text-align: center;
+}
+.user-rating-prompt {
+  background-color: #7C4199;
+  color: #fff;
+  padding: 5px;
+  margin: 0;
+  font-size: 0.75em;
+  text-transform: uppercase;
+}
+.stars {
+  padding: 5px;
+}
+button.star {
+  border: 0;
+  background: transparent;
+  padding: 0.125em;
+  margin: 0;
+  color: #ccc;
+}
+button.star.is-full {
+  color: #F5C400;
+}
+button.star.is-empty {}
+button.star.is-full:hover {
+  color: #F5A400;
+}
+button.star.is-empty:hover {
+  color: #F5C400;
+}
+
+@-webkit-keyframes pulse {
+	0% { color: rgba(0,0,0,0.2); }
+	50% { color: rgba(0,0,0,0.1); }
+	100% { color: rgba(0,0,0,0.2); }
+}
+@keyframes pulse {
+	0% { color: rgba(0,0,0,0.2); }
+	50% { color: rgba(0,0,0,0.1); }
+	100% { color: rgba(0,0,0,0.2); }
+}
+button.star.is-empty:disabled,
+button.star.is-full:disabled {
+  color: #ddd;
+  -webkit-animation: pulse 1s infinite ease-in-out;
+          animation: pulse 1s infinite ease-in-out;
+}
+
+
+/* =Media Queries
+-------------------------------------------------------------- */
+
+@media only screen and (min-height: 440px) and (max-width: 60em) {
+}
+
+@media only screen and (min-height: 568px) and (max-width: 60em) {
+}
+
+@media only screen and (min-width: 768px) and (max-width: 60em) {
+}
+
+@media only screen and (min-width: 60em) {
+  #site-header {
+    color: #181818;
+    background-color: #fff;
+    box-shadow: 0 5px 10px rgba(85, 85, 85, 0.5), inset 0 -3px 0 #00afdb, inset 0 3px 0 #dbef16;
+  }
+  #site-title {
+    height: 4em;
+  }
+  .access li:nth-child(3) > a {
+    display: block;
+  }
+  .access a:visited,
+  .access a:active,
+  .access a:link,
+  .access .btn {
+    background: #fff;
+    color: #181818;
+    text-align: left;
+  }
+  .access a:hover {
+    background: #dbef16;
+  }
+  .access li:hover > ul {
+    box-shadow: -5px 5px 10px rgba(85, 85, 85, 0.5);
+    min-width: 26em;
+  }
+  .sign-in-menu {
+    color: #ccc;
+    background: #333;
+    box-shadow: -5px 5px 10px rgba(85, 85, 85, 0.5);
+  }
+  .sign-in-menu:before {
+    border-bottom-color: #333;
+  }
+  #current-filter-type {
+    background: none;
+    border: none;
+  }
+  #content {
+    box-shadow: -0.375em 0 0.325em rgba(0,0,0,0.25);
+  }
+  a.close-btn {
+    box-shadow: -0.375em 0.325em 0.125em rgba(0,0,0,0.25);
+  }
+  #colophon {
+    box-shadow: 0 -5px 10px rgba(85, 85, 85, 0.5);
+    height: 3.75em;
+    padding: 0.5em;
+  }
+  #powered-by a.openplans-logo {
+    line-height: 3.75em;
+  }
+  #map-container,
+  #content {
+    bottom: 3.75em; /* match height of #colophon */
+  }
+  #colophon {
+    background-color: #f4f6f8;
+    color: #555;
+    box-shadow: inset 0 5px 10px rgba(85, 85, 85, 0.25);
+  }
+  .footer-logos {
+    float: left;
+    display: block;
+    text-align: left;
+    height: 100%;
+  }
+  .footer-logo {
+    float: left;
+    position: relative;
+    height: 100%;
+    margin: 0;
+  }
+  .ie8 .footer-logo:first-child {
+    max-width: 10em;
+  }
+  .ie8 .footer-logo {
+    max-width: 7.25em;
+  }
+  .footer-logo:hover .prompt {
+    display: block;
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    font-size: 0.75em;
+    white-space: nowrap;
+    background: #f4f6f8;
+    margin-bottom: 0.5em;
+    padding: 0.5em 0.75em;
+  }
+  .footer-logo img {
+    width: auto;
+    height: 100%;
+    margin: 0 0.75em;
+  }
+  .footer-logo .miamiherald-logo,
+  .footer-logo .ioby-logo {
+    display: none;
+  }
+  .place-form textarea {
+    height: 15em;
+  }
+
+  a.why-sign-in,
+  a.why-sign-in:hover {
+    display: block;
+    position: absolute;
+    right: 2.25em;
+    bottom: 0.875em;
+    color: #555;
+    font-size: 0.625em;
+    text-transform: uppercase;
+    z-index: 1;
+  }
+  a.why-sign-in span {
+    display: none;
+  }
+  a.why-sign-in:hover span {
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 100%;
+    width: 25em;
+    cursor: default;
+    background: #fff;
+    font-size: 1.375em;
+    text-transform: none;
+    text-decoration: none;
+    box-shadow: -0.125em 0.125em 0.5em rgba(0,0,0,0.25);
+    padding: 1.5em;
+    border-radius: 0.25em;
+  }
+
+  /* List View Button */
+  .list-toggle-nav {
+    font-size: 1em;
+    float: left;
+  }
+  .list-toggle-btn,
+  .list-toggle-btn:visited,
+  .list-toggle-btn:link {
+    background-color: #7C4199;
+    color: #fff;
+    font-weight: 800;
+    min-width: 11.5em;
+  }
+  .list-toggle-btn:hover {
+    background-color: #00aaff;
+    color: #fff;
+  }
+  .show-the-map:before {
+    content: '\27A4';
+    margin: 0 0.375em;
+    display: inline-block;
+    -webkit-transform: rotate(-45deg);
+        -ms-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+    -webkit-transform-origin: 30% 60%;
+        -ms-transform-origin: 30% 60%;
+            transform-origin: 30% 60%;
+
+  }
+  .show-the-list:before {
+    content: '\2630';
+    margin: 0 0.375em;
+    text-shadow: -0.25em -1px 0 #7C4199, -0.25em 1px 0 #7C4199, -0.375em 0 0 #fff;
+  }
+  .list-toggle-btn:hover .show-the-list:before {
+    text-shadow: -0.25em -1px 0 #00aaff, -0.25em 1px 0 #00aaff, -0.375em 0 0 #fff;
+  }
+
+}
+
+@media only screen and (min-width: 64em) {
+  .footer-logo .ioby-logo {
+    display: block;
+  }
+}
+@media only screen and (min-width: 74em) {
+  .footer-logo .miamiherald-logo {
+    display: block;
+  }
+}
+
+/* High Resolution Displays */
+@media only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2) {
+}
+
+#auth-nav-container {
+  display: none;
+}
+
+.support .user-support:hover {
+  background-color: #dbef16;
+  color: #000;
+  cursor: default;
+}
+
+.support .user-support:hover label {
+  background-color: transparent;
+  color: #000;
+}
