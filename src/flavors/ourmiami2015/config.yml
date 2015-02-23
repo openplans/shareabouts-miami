@@ -1,0 +1,429 @@
+app:
+  title: OurMiami
+  name: OurMiami
+  meta_description: _('The Miami Foundation and our partners created the Our Miami Public Space Challenge to discover the best ideas for improving, creating, and activating local public spaces.')
+
+map:
+  geolocation_enabled: false
+  geolocation_onload: false
+  options:
+    center:
+      lat: 25.79571825588276
+      lng: -80.24002075195312
+    zoom: 12
+    minZoom: 10
+    maxZoom: 18
+  layers:
+    - url: http://{s}.tiles.mapbox.com/v3/openplans.h7ab4o5f/{z}/{x}/{y}.png
+      attribution: '&copy; OpenStreetMap contributors, CC-BY-SA. <a href="http://mapbox.com/about/maps" target="_blank">Terms &amp; Feedback</a>'
+
+place_types:
+
+  BeautificationArt:
+    label: _(Beautification/Art)
+    rules:
+      - condition: '"{{location_type}}" === "BeautificationArt" & "{{ff}}" === "1"'
+        icon:
+          iconUrl: /static/css/images/markers/dot-yellow.png
+          iconSize: [20, 20]
+          iconAnchor: [10, 10]
+        focus_icon:
+          iconUrl: /static/css/images/markers/marker-yellow.png
+          shadowUrl: /static/css/images/marker-shadow.png
+          iconSize: [25, 41]
+          shadowSize: [41, 41]
+          iconAnchor: [12, 41]
+      - condition: '"{{location_type}}" === "BeautificationArt"'
+        icon:
+          iconUrl: /static/css/images/markers/dot-yellow.png
+          iconSize: [12, 12]
+          iconAnchor: [6, 6]
+        focus_icon:
+          iconUrl: /static/css/images/markers/marker-yellow.png
+          shadowUrl: /static/css/images/marker-shadow.png
+          iconSize: [25, 41]
+          shadowSize: [41, 41]
+          iconAnchor: [12, 41]
+  ChildIdea:
+    label: _(Child/Senior Citizen Focused)
+    rules:
+      - condition: '"{{location_type}}" === "ChildIdea" & "{{ff}}" === "1"'
+        icon:
+          iconUrl: /static/css/images/markers/dot-green.png
+          iconSize: [20, 20]
+          iconAnchor: [10, 10]
+        focus_icon:
+          iconUrl: /static/css/images/markers/marker-green.png
+          shadowUrl: /static/css/images/marker-shadow.png
+          iconSize: [25, 41]
+          shadowSize: [41, 41]
+          iconAnchor: [12, 41]
+      - condition: '"{{location_type}}" === "ChildIdea"'
+        icon:
+          iconUrl: /static/css/images/markers/dot-green.png
+          iconSize: [12, 12]
+          iconAnchor: [6, 6]
+        focus_icon:
+          iconUrl: /static/css/images/markers/marker-green.png
+          shadowUrl: /static/css/images/marker-shadow.png
+          iconSize: [25, 41]
+          shadowSize: [41, 41]
+          iconAnchor: [12, 41]
+  GardenFarmersMarket:
+    label: _(Garden/Farmers' Market/Healthy Eating)
+    rules:
+      - condition: '"{{location_type}}" === "GardenFarmersMarket"  & "{{ff}}" === "1"'
+        icon:
+          iconUrl: /static/css/images/markers/dot-purple.png
+          iconSize: [18, 18]
+          iconAnchor: [9, 9]
+        focus_icon:
+          iconUrl: /static/css/images/markers/marker-purple.png
+          shadowUrl: /static/css/images/marker-shadow.png
+          iconSize: [25, 41]
+          shadowSize: [41, 41]
+          iconAnchor: [12, 41]
+      - condition: '"{{location_type}}" === "GardenFarmersMarket"'
+        icon:
+          iconUrl: /static/css/images/markers/dot-purple.png
+          iconSize: [12, 12]
+          iconAnchor: [6, 6]
+        focus_icon:
+          iconUrl: /static/css/images/markers/marker-purple.png
+          shadowUrl: /static/css/images/marker-shadow.png
+          iconSize: [25, 41]
+          shadowSize: [41, 41]
+          iconAnchor: [12, 41]
+  PhysicalActivity:
+    label: _(Physical Activity/Exercise)
+    rules:
+      - condition: '"{{location_type}}" === "PhysicalActivity" & "{{ff}}" === "1"'
+        icon:
+          iconUrl: /static/css/images/markers/dot-pink.png
+          iconSize: [20, 20]
+          iconAnchor: [10, 10]
+        focus_icon:
+          iconUrl: /static/css/images/markers/marker-pink.png
+          shadowUrl: /static/css/images/marker-shadow.png
+          iconSize: [25, 41]
+          shadowSize: [41, 41]
+          iconAnchor: [12, 41]
+      - condition: '"{{location_type}}" === "PhysicalActivity"'
+        icon:
+          iconUrl: /static/css/images/markers/dot-pink.png
+          iconSize: [12, 12]
+          iconAnchor: [6, 6]
+        focus_icon:
+          iconUrl: /static/css/images/markers/marker-pink.png
+          shadowUrl: /static/css/images/marker-shadow.png
+          iconSize: [25, 41]
+          shadowSize: [41, 41]
+          iconAnchor: [12, 41]
+  ShadePublicComfort:
+    label: _(Public Comfort (shade, seating, etc.))
+    rules:
+      - condition: '"{{location_type}}" === "ShadePublicComfort" & "{{ff}}" === "1"'
+        icon:
+          iconUrl: /static/css/images/markers/dot-blue.png
+          iconSize: [20, 20]
+          iconAnchor: [10, 10]
+        focus_icon:
+          iconUrl: /static/css/images/markers/marker-blue.png
+          shadowUrl: /static/css/images/marker-shadow.png
+          iconSize: [25, 41]
+          shadowSize: [41, 41]
+          iconAnchor: [12, 41]
+      - condition: '"{{location_type}}" === "ShadePublicComfort"'
+        icon:
+          iconUrl: /static/css/images/markers/dot-blue.png
+          iconSize: [12, 12]
+          iconAnchor: [6, 6]
+        focus_icon:
+          iconUrl: /static/css/images/markers/marker-blue.png
+          shadowUrl: /static/css/images/marker-shadow.png
+          iconSize: [25, 41]
+          shadowSize: [41, 41]
+          iconAnchor: [12, 41]
+  CommunityGatheringSpace:
+    label: _(Gathering Space)
+    rules:
+      - condition: '"{{location_type}}" === "CommunityGatheringSpace"  & "{{ff}}" === "1"'
+        icon:
+          iconUrl: /static/css/images/markers/dot-teal.png
+          iconSize: [20, 20]
+          iconAnchor: [10, 10]
+        focus_icon:
+          iconUrl: /static/css/images/markers/marker-teal.png
+          shadowUrl: /static/css/images/marker-shadow.png
+          iconSize: [25, 41]
+          shadowSize: [41, 41]
+          iconAnchor: [12, 41]
+      - condition: '"{{location_type}}" === "CommunityGatheringSpace"'
+        icon:
+          iconUrl: /static/css/images/markers/dot-teal.png
+          iconSize: [12, 12]
+          iconAnchor: [6, 6]
+        focus_icon:
+          iconUrl: /static/css/images/markers/marker-teal.png
+          shadowUrl: /static/css/images/marker-shadow.png
+          iconSize: [25, 41]
+          shadowSize: [41, 41]
+          iconAnchor: [12, 41]
+  SafeStreets:
+    label: _(Safety)
+    rules:
+      - condition: '"{{location_type}}" === "SafeStreets" & "{{ff}}" === "1"'
+        icon:
+          iconUrl: /static/css/images/markers/dot-orange.png
+          iconSize: [20, 20]
+          iconAnchor: [10, 10]
+        focus_icon:
+          iconUrl: /static/css/images/markers/marker-orange.png
+          shadowUrl: /static/css/images/marker-shadow.png
+          iconSize: [25, 41]
+          shadowSize: [41, 41]
+          iconAnchor: [12, 41]
+      - condition: '"{{location_type}}" === "SafeStreets"'
+        icon:
+          iconUrl: /static/css/images/markers/dot-orange.png
+          iconSize: [12, 12]
+          iconAnchor: [6, 6]
+        focus_icon:
+          iconUrl: /static/css/images/markers/marker-orange.png
+          shadowUrl: /static/css/images/marker-shadow.png
+          iconSize: [25, 41]
+          shadowSize: [41, 41]
+          iconAnchor: [12, 41]
+  SignageWayfinding:
+    label: _(Signage/Wayfinding)
+    rules:
+      - condition: '"{{location_type}}" === "SignageWayfinding" & "{{ff}}" === "1"'
+        icon:
+          iconUrl: /static/css/images/markers/dot-red.png
+          iconSize: [20, 20]
+          iconAnchor: [10, 10]
+        focus_icon:
+          iconUrl: /static/css/images/markers/marker-red.png
+          shadowUrl: /static/css/images/marker-shadow.png
+          iconSize: [25, 41]
+          shadowSize: [41, 41]
+          iconAnchor: [12, 41]
+      - condition: '"{{location_type}}" === "SignageWayfinding"'
+        icon:
+          iconUrl: /static/css/images/markers/dot-red.png
+          iconSize: [12, 12]
+          iconAnchor: [6, 6]
+        focus_icon:
+          iconUrl: /static/css/images/markers/marker-red.png
+          shadowUrl: /static/css/images/marker-shadow.png
+          iconSize: [25, 41]
+          shadowSize: [41, 41]
+          iconAnchor: [12, 41]
+
+activity:
+  enabled: true
+  interval: 30000
+
+place:
+  adding_supported: false
+  add_button_label: _(Add an idea)
+  # Labels for the buttons that toggle the map and list views
+  show_list_button_label: _(List Ideas)
+  show_map_button_label: _(Show the Map)
+  action_text: _(suggested)
+  title: _(Tell us more...)
+  action_text: _(suggested)
+  anonymous_name: _(Someone)
+  submit_button_label: _(Post it to the map)
+  items:
+    - prompt: _(Your Name)
+      label: _(Suggested by)
+      type: text
+      name: submitter_name
+      attrs:
+        - key: placeholder
+          value: _(Person/Org to be credited for idea publicly)
+        - key: size
+          value: 30
+    - prompt: _(* Your email)
+      type: email
+      optional: false
+      name: private-email
+      attrs:
+        - key: placeholder
+          value: _(Your email will not be shown publicly)
+        - key: size
+          value: 30
+        - key: required
+          value: required
+    - prompt: _(* The title of my project is...)
+      type: textarea
+      name: title
+      optional: false
+      label: _(The title of my project is...)
+      attrs:
+        - key: placeholder
+          value: _(Help us with a great name to identify your project.)
+        - key: required
+          value: required
+        - key: maxlength
+          value: 100
+    - prompt: _(* My idea to improve this place...)
+      type: textarea
+      name: description
+      optional: false
+      label: _(My idea to improve this place...)
+      attrs:
+        - key: placeholder
+          value: _(Think low cost, block focused, short term, street scale or smaller.)
+        - key: required
+          value: required
+        - key: maxlength
+          value: 750
+    - prompt: _(* So that people could...)
+      type: textarea
+      name: details
+      optional: false
+      label: _(So that people could...)
+      attrs:
+        - key: placeholder
+          value: _(Tell us why this idea would help make our Miami better.)
+        - key: required
+          value: required
+        - key: maxlength
+          value: 750
+    - prompt: _(* Idea type)
+      label: _(Idea type)
+      type: select
+      options:
+        - label: _(Please choose...)
+          value: ""
+        - label: _(Beautification/Art)
+          value: BeautificationArt
+        - label: _(Child/Senior Citizen Focused)
+          value: ChildIdea
+        - label: _(Garden/Farmers' Market/Healthy Eating)
+          value: GardenFarmersMarket
+        - label: _(Physical Activity/Exercise)
+          value: PhysicalActivity
+        - label: _(Public Comfort (shade, seating, etc.))
+          value: ShadePublicComfort
+        - label: _(Gathering Space)
+          value: CommunityGatheringSpace
+        - label: _(Safety)
+          value: SafeStreets
+        - label: _(Signage/Wayfinding)
+          value: SignageWayfinding
+      attrs:
+      - key: required
+        value: required
+      name: location_type
+    - prompt: _(Your phone number)
+      type: text
+      name: private-phone
+      attrs:
+        - key: placeholder
+          value: _(Your number will not be shown publicly)
+        - key: size
+          value: 30
+    - prompt: _(Show us with a picture)
+      inputfile_label: _(Upload an image)
+      type: file
+      name: my_image
+      attrs:
+        - key: accept
+          value: image/*
+    - prompt: _(Add a link)
+      type: text
+      name: infolink
+      attrs:
+        - key: placeholder
+          value: _(Add a related link (an example or more info))
+        - key: size
+          value: 30
+    - type: hidden
+      name: private-conf
+      attrs:
+        - key: value
+          value: "Not sent"
+
+survey:
+  submission_type: comments
+
+  # Response config
+  show_responses: true
+  response_name: _(comment)
+  response_plural_name: _(comments)
+  action_text: _(commented on)
+  anonymous_name: _(Someone)
+
+  # Survey form config
+  title: _(Leave a Comment)
+  form_link_text: _(Leave a Comment)
+  submit_btn_text: _(Comment)
+  items:
+    - prompt: _(Comment)
+      label: _(Comment)
+      type: textarea
+      name: comment
+      attrs:
+        - key: required
+    - prompt: _(Your Name)
+      type: text
+      name: submitter_name
+
+support:
+  submission_type: support
+  submit_btn_text: _(Like This!)
+  response_name: _(like)
+  response_plural_name: _(likes)
+  action_text: liked
+  anonymous_name: _(Someone)
+
+pages:
+  - title: _(About)
+    slug: about
+    name: overview
+  - title: _(FAQ)
+    slug: faq
+    name: faq
+  - title: _(Winners)
+    slug: winners
+    name: finalists
+  - title: _(Contact us)
+    slug: contact
+    name: features
+  - title: Filter Places
+    slug: filter-type
+    pages:
+      - title: All
+        external: true
+        url: /filter/all
+      - title: _(Beautification/Art)
+        url: /filter/beautificationart
+        external: true
+      - title: _(Child/Senior Citizen Focused)
+        url: /filter/childidea
+        external: true
+      - title: _(Garden/Farmers' Market/Healthy Eating)
+        url: /filter/gardenfarmersmarket
+        external: true
+      - title: _(Physical Activity/Exercise)
+        url: /filter/physicalactivity
+        external: true
+      - title: _(Public Comfort (shade, seating, etc.))
+        url: /filter/shadepubliccomfort
+        external: true
+      - title: _(Gathering Space)
+        url: /filter/communitygatheringspace
+        external: true
+      - title: _(Safety)
+        url: /filter/safestreets
+        external: true
+      - title: _(Signage/Wayfinding)
+        url: /filter/signagewayfinding
+        external: true
+
+notifications:
+  on_new_place: true
+  submitter_email_field: private-email
