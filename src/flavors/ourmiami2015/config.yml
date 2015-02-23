@@ -387,9 +387,6 @@ pages:
   - title: _(FAQ)
     slug: faq
     name: faq
-  - title: _(Winners)
-    slug: winners
-    name: finalists
   - title: _(Contact us)
     slug: contact
     name: features
