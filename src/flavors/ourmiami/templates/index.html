@@ -315,6 +315,35 @@
     });
   };
 
+  Shareabouts.ListView.prototype.ratingSort = function(a, b) {
+    var userToken = Shareabouts.Config.userToken,
+        getPlaceRating,
+        aRating, bRating;
+
+    getPlaceRating = function(place) {
+      var ratingModel = place.submissionSets.ratings.findWhere(
+        {'user_token': userToken});
+
+      if (!_.isUndefined(ratingModel)) {
+        return ratingModel.get('rating');
+      }
+    }
+
+    aRating = getPlaceRating(a);
+    if (_.isUndefined(aRating)) {
+      return -1;
+    }
+
+    bRating = getPlaceRating(b);
+    if (_.isUndefined(bRating)) {
+      return 1;
+    }
+
+    if (aRating === bRating) { return 0; }
+    if (aRating < bRating) { return -1; }
+    if (aRating > bRating) { return 1; }
+  }
+
   $(document).on('click', 'a.why-sign-in', function(evt) {
     evt.preventDefault();
   });
@@ -334,6 +363,18 @@ Handlebars.registerHelper('newLineToBr', function(str) {
     return str;
   }
 });
+
+Handlebars.registerHelper('isJudging', function(options) {
+  var groups = Shareabouts.bootstrapped.currentUser ? Shareabouts.bootstrapped.currentUser.groups : [],
+      datasetUrl = Shareabouts.bootstrapped.datasetUrl,
+      judgingGroup = _.find(groups, function(group) { return group.dataset.indexOf(datasetUrl) === 0; });
+
+  if (!_.isUndefined(judgingGroup)) {
+    return options.fn(this);
+  } else {
+    return options.inverse(this);
+  }
+})
 
 </script>
 
