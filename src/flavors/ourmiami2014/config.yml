@@ -221,7 +221,7 @@ place_types:
           iconAnchor: [12, 41]
 
 activity:
-  enabled: true
+  enabled: false
   interval: 30000
 
 place:
