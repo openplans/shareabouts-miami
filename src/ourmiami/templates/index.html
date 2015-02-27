@@ -191,8 +191,7 @@
       if (route === 'filterMap' || route === 'viewPlace' || route === 'showList' || route === 'viewMap') {
         // Don't clear the filter
       } else {
-        this.appView.mapView.clearFilter();
-        this.appView.listView.clearFilters({});
+        this.clearLocationTypeFilter();
       }
     }, this);
 
@@ -217,8 +216,11 @@
     });
   };
 
-  Shareabouts.App.prototype.filterMap = function(locationType) {
-    // Get or create an element between the "Filter Places" link and the list of options
+  Shareabouts.App.prototype.clearLocationTypeFilter = function() {
+    this.setLocationTypeFilter('all');
+  };
+
+  Shareabouts.App.prototype.setLocationTypeFilter = function(locationType) {
     var $filterIndicator = $('#current-filter-type');
     if ($filterIndicator.length === 0) {
       $filterIndicator = $('<div id="current-filter-type"/>')
@@ -250,7 +252,12 @@
         .removeClass()
         .addClass('unfiltered')
         .empty();
+    }
+  };
 
+  Shareabouts.App.prototype.filterMap = function(locationType) {
+    this.setLocationTypeFilter(locationType);
+    if (locationType === 'all') {
       if (this.appView.listView.isVisible()) {
         this.navigate('/list', {trigger: false});
       } else {
@@ -349,8 +356,7 @@
   });
 
   $(document).on('click', '.activity-item a', function(evt) {
-    window.app.appView.mapView.clearFilter();
-    window.app.appView.listView.clearFilters();
+    window.app.clearLocationTypeFilter();
   })
 
 }(Shareabouts));
