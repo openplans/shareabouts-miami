@@ -199,7 +199,7 @@
           url;
 
       // Handle /filter links
-      if (href.indexOf('/filter') === 0) {
+      if (href.indexOf('/filter') === 0 || !_.isUndefined($link.attr('data-internal'))) {
         evt.preventDefault();
 
         // Remove leading slashes and hash bangs (backward compatablility)
