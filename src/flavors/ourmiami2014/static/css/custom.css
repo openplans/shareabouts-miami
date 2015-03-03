@@ -504,6 +504,11 @@ button.star.is-full:disabled {
           animation: pulse 1s infinite ease-in-out;
 }
 
+#auth-nav-container img {
+  height: 2.5em;
+  float: right;
+}
+
 
 /* =Media Queries
 -------------------------------------------------------------- */
@@ -518,6 +523,11 @@ button.star.is-full:disabled {
 }
 
 @media only screen and (min-width: 60em) {
+  #auth-nav-container img {
+    height: 4em;
+    float: right;
+  }
+
   #site-header {
     color: #181818;
     background-color: #fff;
@@ -706,9 +716,10 @@ button.star.is-full:disabled {
 @media only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2) {
 }
 
-#auth-nav-container {
+/*#auth-nav-container {
   display: none;
 }
+*/
 
 .support .user-support:hover {
   background-color: #dbef16;
