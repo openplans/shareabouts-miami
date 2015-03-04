@@ -502,6 +502,10 @@ button.star.is-full:disabled {
 }
 
 @media only screen and (min-width: 60em) {
+  .hide-for-medium-up {
+    display: none;
+  }
+
   #site-header {
     color: #181818;
     background-color: #fff;
