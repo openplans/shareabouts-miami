@@ -388,9 +388,6 @@ pages:
   - title: _(FAQ)
     slug: faq
     name: faq
-  - title: _(Previous Winners)
-    external: true
-    url: //ideas2014.ourmiami.org/page/winners
   - title: _(Contact us)
     slug: contact
     name: features
