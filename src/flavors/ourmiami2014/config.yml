@@ -384,6 +384,7 @@ pages:
   - title: _(About)
     slug: about
     name: overview
+    start_page: true
   - title: _(FAQ)
     slug: faq
     name: faq
