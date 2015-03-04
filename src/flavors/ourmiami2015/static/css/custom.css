@@ -201,9 +201,6 @@ form .signed-in-as {
 }
 
 /* icons in filter menu */
-.access li:nth-child(3) > a {
-  display: none;
-}
 .access li ul li a {
   background: #fff url() 5px center no-repeat scroll !important;
   text-align: left !important;
@@ -491,6 +488,14 @@ button.star.is-full:disabled {
 
 /* =Media Queries
 -------------------------------------------------------------- */
+
+@media only screen and (max-width: 60em) {
+  .access li:last-child > a:hover,
+  .access li:last-child > a:focus {
+    background-color: #dbef16;
+    color: #000;
+  }
+}
 
 @media only screen and (min-height: 440px) and (max-width: 60em) {
 }
