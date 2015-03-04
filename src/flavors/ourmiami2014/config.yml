@@ -381,19 +381,13 @@ support:
   anonymous_name: _(Someone)
 
 pages:
-  - title: _(About)
-    slug: about
-    name: overview
-    start_page: true
-  - title: _(FAQ)
-    slug: faq
-    name: faq
-  - title: _(Winners)
+  - title: _(Go to the 2015 challenge)
+    external: true
+    url: //ideas.ourmiami.org/
+  - title: _(2014 Winners)
     slug: winners
     name: finalists
-  - title: _(Contact us)
-    slug: contact
-    name: features
+    start_page: true
   - title: Filter Places
     slug: filter-type
     pages:
