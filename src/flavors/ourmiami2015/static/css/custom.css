@@ -708,6 +708,7 @@ button.star.is-full:disabled {
 
 /* hiding comment fields and auth */
 
+/*
 .drag-marker-instructions + h4 {
   display: none;
 }
@@ -742,3 +743,4 @@ a.reply-link.btn.btn-small {
   background-color: transparent;
   color: #000;
 }
+*/
