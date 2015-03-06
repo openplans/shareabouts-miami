@@ -485,6 +485,10 @@ button.star.is-full:disabled {
           animation: pulse 1s infinite ease-in-out;
 }
 
+.show-for-medium-up {
+  display: none;
+}
+
 
 /* =Media Queries
 -------------------------------------------------------------- */
@@ -509,6 +513,10 @@ button.star.is-full:disabled {
 @media only screen and (min-width: 60em) {
   .hide-for-medium-up {
     display: none;
+  }
+
+  .show-for-medium-up {
+    display: initial;
   }
 
   #site-header {
