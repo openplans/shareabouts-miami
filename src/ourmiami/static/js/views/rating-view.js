@@ -3,6 +3,8 @@
 var Shareabouts = Shareabouts || {};
 
 (function(S, $, console){
+  'use strict';
+
   S.RatingView = Backbone.View.extend({
     events: {
       'click .star': 'onStarClick',
@@ -19,26 +21,16 @@ var Shareabouts = Shareabouts || {};
 
     render: function() {
       var self = this,
-          user = S.bootstrapped.currentUser || {'groups': []},
 
-          // get our two judge groups
-          group1 = _.find(user.groups, function(group) { return _.isEqual(group, {'dataset': S.bootstrapped.datasetUrl, 'name': 'judges-1'}); }),
-          group2 = _.find(user.groups, function(group) { return _.isEqual(group, {'dataset': S.bootstrapped.datasetUrl, 'name': 'judges-2'}); }),
+          // The userJudgeGroup is set in an app initializer in index.html
+          userJudgeGroup = S.Config.userJudgeGroup,
 
           // see which judging group this place is in.
-          judgeGroup = this.collection.options.placeModel.get("judgeGroup"),
+          modelJudgeGroup = this.collection.options.placeModel.get("judgeGroup");
 
-          judge1, judge2;
-
-      // if the place is not in a judging group or a user
-      if (!judgeGroup || !user || !(group1 || group2) ) { return this; }
-
-      if (judgeGroup === '1') { judge1 = true; }
-      if (judgeGroup === '3') { judge2 = true; }
-
-      // Don't judge this at all because it's not a group we care about OR
-      // if the judge doesn't match the place juding group
-      if ((!judge1 && !judge2) || (group1 && judge2) || (group2 && judge1)) {
+      // Don't judge this at all if the judge doesn't match the place juding
+      // group
+      if (modelJudgeGroup !== userJudgeGroup) {
         // show a helpful message
         this.$el.html('<p class="user-rating-prompt" style="margin-bottom:1em">No judging required</p>');
 
