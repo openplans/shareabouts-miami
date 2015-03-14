@@ -319,6 +319,17 @@
     });
   };
 
+  Shareabouts.PlaceListView.prototype.ui['rating'] = '.rating-sort';
+  Shareabouts.PlaceListView.prototype.events['click @ui.rating'] = 'handleRatingSort';
+  Shareabouts.PlaceListView.prototype.handleRatingSort = function(evt) {
+    evt.preventDefault();
+
+    this.sortBy = 'rating';
+    this.sort();
+
+    this.updateSortLinks();
+  };
+
   Shareabouts.PlaceListView.prototype.ratingSort = function(a, b) {
     var userToken = Shareabouts.Config.userToken,
         getPlaceRating,
@@ -335,17 +346,17 @@
 
     aRating = getPlaceRating(a);
     if (_.isUndefined(aRating)) {
-      return -1;
+      return 1;
     }
 
     bRating = getPlaceRating(b);
     if (_.isUndefined(bRating)) {
-      return 1;
+      return -1;
     }
 
     if (aRating === bRating) { return 0; }
-    if (aRating < bRating) { return -1; }
-    if (aRating > bRating) { return 1; }
+    if (aRating < bRating) { return 1; }
+    if (aRating > bRating) { return -1; }
   }
 
   $(document).on('click', 'a.why-sign-in', function(evt) {

@@ -163,8 +163,8 @@ INSTALLED_APPS = (
     'django_extensions',
 
     # Project apps
-    'sa_web',
     'ourmiami',
+    'sa_web',
     'proxy',
 )
 
