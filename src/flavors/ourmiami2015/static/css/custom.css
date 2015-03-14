@@ -633,6 +633,9 @@ button.star.is-full:disabled {
     text-transform: uppercase;
     z-index: 1;
   }
+  a.why-sign-in span {
+    display: none;
+  }
   a.why-sign-in:hover span {
     display: block;
     position: absolute;
