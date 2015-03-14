@@ -191,7 +191,9 @@
     var self = this;
     var S = Shareabouts;
 
-    S.Config.userJudgeGroup = S.getJudgeGroup(S.bootstrapped.currentUser);
+    if (S.bootstrapped.currentUser) {
+      S.Config.userJudgeGroup = S.getJudgeGroup(S.bootstrapped.currentUser);
+    }
 
     this.route('filter/:locationtype', 'filterMap');
 
