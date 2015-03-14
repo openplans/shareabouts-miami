@@ -176,9 +176,22 @@
     }
   };
 
+  Shareabouts.getJudgeGroup = function(user) {
+    var judgeGroup = _.findWhere(user.groups, {'dataset': S.bootstrapped.datasetUrl});
+
+    if (judgeGroup) {
+      return _.last(judgeGroup.name);
+    } else {
+      return;
+    }
+  };
+
   var appInitialize = Shareabouts.App.prototype.initialize;
   Shareabouts.App.prototype.initialize = function(options) {
     var self = this;
+    var S = Shareabouts;
+
+    S.Config.userJudgeGroup = S.getJudgeGroup(S.bootstrapped.currentUser);
 
     this.route('filter/:locationtype', 'filterMap');
 
@@ -319,6 +332,21 @@
     });
   };
 
+  Shareabouts.PlaceListView.prototype.ui['ratingReverse'] = '.rating-reverse-sort';
+  Shareabouts.PlaceListView.prototype.events['click @ui.ratingReverse'] = 'handleRatingReverseSort';
+  Shareabouts.PlaceListView.prototype.handleRatingReverseSort = function(evt) {
+    evt.preventDefault();
+
+    this.sortBy = 'ratingReverse';
+    this.sort();
+
+    this.updateSortLinks();
+  };
+
+  Shareabouts.PlaceListView.prototype.ratingReverseSort = function(a, b) {
+    return Shareabouts.PlaceListView.prototype.ratingSort.call(this, a, b, true);
+  };
+
   Shareabouts.PlaceListView.prototype.ui['rating'] = '.rating-sort';
   Shareabouts.PlaceListView.prototype.events['click @ui.rating'] = 'handleRatingSort';
   Shareabouts.PlaceListView.prototype.handleRatingSort = function(evt) {
@@ -330,9 +358,12 @@
     this.updateSortLinks();
   };
 
-  Shareabouts.PlaceListView.prototype.ratingSort = function(a, b) {
+  Shareabouts.PlaceListView.prototype.ratingSort = function(a, b, reverse) {
     var userToken = Shareabouts.Config.userToken,
+        LOWER = 1, HIGHER = -1, SAME = 0,
         getPlaceRating,
+        userJudgeGroup = Shareabouts.Config.userJudgeGroup,
+        aJudgeGroup, bJudgeGroup,
         aRating, bRating;
 
     getPlaceRating = function(place) {
@@ -342,21 +373,34 @@
       if (!_.isUndefined(ratingModel)) {
         return ratingModel.get('rating');
       }
+    };
+
+    // Ideas out of the judging group are always at the bottom.
+    aJudgeGroup = a.get('judgeGroup');
+    if (userJudgeGroup !== aJudgeGroup) {
+      return LOWER;
     }
 
+    bJudgeGroup = b.get('judgeGroup')
+    if (userJudgeGroup !== bJudgeGroup) {
+      return HIGHER;
+    }
+
+    // Ideas that haven't been rated yet should be interpreted like a rating
+    // of 0.
     aRating = getPlaceRating(a);
     if (_.isUndefined(aRating)) {
-      return 1;
+      return (reverse ? HIGHER : LOWER);
     }
 
     bRating = getPlaceRating(b);
     if (_.isUndefined(bRating)) {
-      return -1;
+      return (reverse ? LOWER : HIGHER);
     }
 
-    if (aRating === bRating) { return 0; }
-    if (aRating < bRating) { return 1; }
-    if (aRating > bRating) { return -1; }
+    if (aRating === bRating) { return SAME; }
+    if (aRating < bRating) { return (reverse ? HIGHER : LOWER); }
+    if (aRating > bRating) { return (reverse ? LOWER : HIGHER); }
   }
 
   $(document).on('click', 'a.why-sign-in', function(evt) {
