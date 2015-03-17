@@ -24,6 +24,9 @@ a:hover {
 #sign-in-btn:hover {
   color: #0087a8;
 }
+a.why-sign-in {
+  display: none;
+}
 
 .drag-marker-instructions {
   background-color: #7C4199;
