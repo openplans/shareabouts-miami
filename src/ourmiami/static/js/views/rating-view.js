@@ -28,6 +28,10 @@ var Shareabouts = Shareabouts || {};
           // see which judging group this place is in.
           modelJudgeGroup = this.collection.options.placeModel.get("judgeGroup");
 
+      if (!modelJudgeGroup || !userJudgeGroup) {
+        return this;
+      }
+      
       // Don't judge this at all if the judge doesn't match the place juding
       // group
       if (modelJudgeGroup !== userJudgeGroup) {
