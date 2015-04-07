@@ -177,13 +177,9 @@
   };
 
   Shareabouts.getJudgeGroup = function(user) {
-    var judgeGroup = _.findWhere(user.groups, {'dataset': S.bootstrapped.datasetUrl});
-
-    if (judgeGroup) {
-      return _.last(judgeGroup.name);
-    } else {
-      return;
-    }
+    var judgeGroups = _.where(user.groups,
+      {'dataset': S.bootstrapped.datasetUrl});
+    return _.pluck(judgeGroups, 'name');
   };
 
   var appInitialize = Shareabouts.App.prototype.initialize;
@@ -379,12 +375,12 @@
 
     // Ideas out of the judging group are always at the bottom.
     aJudgeGroup = a.get('judgeGroup');
-    if (userJudgeGroup !== aJudgeGroup) {
+    if (!_.contains(userJudgeGroup, aJudgeGroup)) {
       return LOWER;
     }
 
     bJudgeGroup = b.get('judgeGroup')
-    if (userJudgeGroup !== bJudgeGroup) {
+    if (!_.contains(userJudgeGroup, bJudgeGroup)) {
       return HIGHER;
     }
 

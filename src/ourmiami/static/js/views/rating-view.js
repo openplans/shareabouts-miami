@@ -28,13 +28,13 @@ var Shareabouts = Shareabouts || {};
           // see which judging group this place is in.
           modelJudgeGroup = this.collection.options.placeModel.get("judgeGroup");
 
-      if (!modelJudgeGroup || !userJudgeGroup) {
+      if (!modelJudgeGroup || !userJudgeGroup || !userJudgeGroup.length) {
         return this;
       }
-      
+
       // Don't judge this at all if the judge doesn't match the place juding
       // group
-      if (modelJudgeGroup !== userJudgeGroup) {
+      if (!_.contains(userJudgeGroup, modelJudgeGroup)) {
         // show a helpful message
         this.$el.html('<p class="user-rating-prompt" style="margin-bottom:1em">No judging required</p>');
 
