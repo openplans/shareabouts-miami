@@ -1,15 +1,30 @@
     <form class="user-rating" action="#" method="post" class="btn btn-block btn-small">
       <input type="hidden" name="user_token" value="{{{ user_token }}}">
       <input type="hidden" name="visible" value="true">
-      <input type="hidden" name="rating" value="{{ user_rating }}">
+      <input type="hidden" name="rating" value="{{ user_rating.rating }}">
 
-      <p class="user-rating-prompt">Rate This Project</p>
-
-      <div class="stars">
-        {{# is_star_filled 1 }}<button type="button" class="star rating-value-1 is-full">&#9733;</button>{{^}}<button type="button" class="star rating-value-1 is-empty">&#9733;</button>{{/ is_star_filled }}<!--
-     -->{{# is_star_filled 2 }}<button type="button" class="star rating-value-2 is-full">&#9733;</button>{{^}}<button type="button" class="star rating-value-2 is-empty">&#9733;</button>{{/ is_star_filled }}<!--
-     -->{{# is_star_filled 3 }}<button type="button" class="star rating-value-3 is-full">&#9733;</button>{{^}}<button type="button" class="star rating-value-3 is-empty">&#9733;</button>{{/ is_star_filled }}<!--
-     -->{{# is_star_filled 4 }}<button type="button" class="star rating-value-4 is-full">&#9733;</button>{{^}}<button type="button" class="star rating-value-4 is-empty">&#9733;</button>{{/ is_star_filled }}<!--
-     -->{{# is_star_filled 5 }}<button type="button" class="star rating-value-5 is-full">&#9733;</button>{{^}}<button type="button" class="star rating-value-5 is-empty">&#9733;</button>{{/ is_star_filled }}
+      {{#if user_rating.optout}}
+      <div class="optout-reason">
+        <p class="optout-prompt">Opting out because&hellip;</p>
+        <input type="text" name="optout_reason" value="{{ user_rating.optout_reason }}">
       </div>
+      {{else}}
+      <div class="stars-wrapper">
+        <p class="user-rating-prompt">Rate This Project</p>
+
+        <div class="stars">
+          {{# is_star_filled 1 }}<button type="button" class="star rating-value-1 is-full">&#9733;</button>{{^}}<button type="button" class="star rating-value-1 is-empty">&#9733;</button>{{/ is_star_filled }}<!--
+       -->{{# is_star_filled 2 }}<button type="button" class="star rating-value-2 is-full">&#9733;</button>{{^}}<button type="button" class="star rating-value-2 is-empty">&#9733;</button>{{/ is_star_filled }}<!--
+       -->{{# is_star_filled 3 }}<button type="button" class="star rating-value-3 is-full">&#9733;</button>{{^}}<button type="button" class="star rating-value-3 is-empty">&#9733;</button>{{/ is_star_filled }}<!--
+       -->{{# is_star_filled 4 }}<button type="button" class="star rating-value-4 is-full">&#9733;</button>{{^}}<button type="button" class="star rating-value-4 is-empty">&#9733;</button>{{/ is_star_filled }}<!--
+       -->{{# is_star_filled 5 }}<button type="button" class="star rating-value-5 is-full">&#9733;</button>{{^}}<button type="button" class="star rating-value-5 is-empty">&#9733;</button>{{/ is_star_filled }}
+        </div>
+      </div>
+      {{/if}}
+
+      <input type="checkbox" name="optout"
+        id="rating-{{place_id}}-optout"
+        {{#if user_rating.optout}}checked{{/if}}>
+      <label class="optout-label" for="rating-{{place_id}}-optout">
+        Opt out of rating this idea</label>
     </form>

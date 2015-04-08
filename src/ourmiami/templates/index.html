@@ -365,6 +365,8 @@
         aRating, bRating;
 
     getPlaceRating = function(place) {
+      if (!place.submissionSets.ratings) {return; }
+
       var ratingModel = place.submissionSets.ratings.findWhere(
         {'user_token': userToken});
 

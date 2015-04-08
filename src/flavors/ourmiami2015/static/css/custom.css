@@ -439,10 +439,15 @@ a.shareabouts-logo:hover {
 .user-rating {
   float: right;
   margin-bottom: 0.75em;
-  border: 2px solid #7C4199;
   text-align: center;
+  width: 10em;
 }
-.user-rating-prompt {
+.stars-wrapper,
+.optout-reason {
+  border: 2px solid #7C4199;
+}
+.user-rating-prompt,
+.optout-prompt {
   background-color: #7C4199;
   color: #fff;
   padding: 5px;
@@ -450,6 +455,17 @@ a.shareabouts-logo:hover {
   font-size: 0.75em;
   text-transform: uppercase;
 }
+.optout-label {
+  font-weight: normal;
+}
+/*
+input[name="optout"]:checked ~ .stars-wrapper {
+  display: none;
+}
+input[name="optout"]:not(:checked) ~ .optout-reason {
+  display: none;
+}
+*/
 .stars {
   padding: 5px;
 }
@@ -482,7 +498,8 @@ button.star.is-empty:hover {
 	100% { color: rgba(0,0,0,0.2); }
 }
 button.star.is-empty:disabled,
-button.star.is-full:disabled {
+button.star.is-full:disabled,
+input[name="optout_reason"]:disabled {
   color: #ddd;
   -webkit-animation: pulse 1s infinite ease-in-out;
           animation: pulse 1s infinite ease-in-out;
