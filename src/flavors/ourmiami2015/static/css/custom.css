@@ -728,19 +728,32 @@ input[name="optout_reason"]:disabled {
 }
 
 
-
-/* hiding comment fields and auth */
-
-/*
-.drag-marker-instructions + h4 {
-  display: none;
-}
+/* hiding comment fields */
 
 div #reply {
   display: none;
 }
 
 a.reply-link.btn.btn-small {
+  display: none;
+}
+
+.support .user-support:hover {
+  background-color: #dbef16;
+  color: #000;
+  cursor: default;
+}
+
+.support .user-support:hover label {
+  background-color: transparent;
+  color: #000;
+}
+
+
+/* hiding auth */
+
+/*
+.drag-marker-instructions + h4 {
   display: none;
 }
 
@@ -754,16 +767,5 @@ a.reply-link.btn.btn-small {
 
 .why-sign-in {
   display: none;
-}
-
-.support .user-support:hover {
-  background-color: #dbef16;
-  color: #000;
-  cursor: default;
-}
-
-.support .user-support:hover label {
-  background-color: transparent;
-  color: #000;
 }
 */
