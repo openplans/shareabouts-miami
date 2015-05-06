@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="929.1073"
+   height="938.71332"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.48.5 r10040"
+   inkscape:export-filename="/home/mjumbewu/Programming/poepublic/shareabouts-miami-psc/src/ourmiami/static/css/images/finalist-star.jpg.png"
+   inkscape:export-xdpi="6.1999998"
+   inkscape:export-ydpi="6.1999998"
+   sodipodi:docname="New document 1">
+  <defs
+     id="defs4" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.35"
+     inkscape:cx="187.22873"
+     inkscape:cy="145.79064"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     inkscape:window-width="1366"
+     inkscape:window-height="709"
+     inkscape:window-x="0"
+     inkscape:window-y="25"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(312.22873,254.84623)">
+    <path
+       sodipodi:type="star"
+       style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:49.10000000000000142;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       id="path2989"
+       sodipodi:sides="5"
+       sodipodi:cx="180"
+       sodipodi:cy="232.36218"
+       sodipodi:r1="471.25537"
+       sodipodi:r2="247.74352"
+       sodipodi:arg1="0.75122344"
+       sodipodi:arg2="1.379542"
+       inkscape:flatsided="false"
+       inkscape:rounded="0"
+       inkscape:randomized="0"
+       d="M 524.41905,554.00973 227.0937,475.58848 -19.473652,659.31872 -36.769205,352.31201 -287.70055,174.58829 -1.0644324,63.268952 90.418817,-230.30058 284.86523,7.9069925 592.33633,4.1947571 425.87471,262.73448 z"
+       inkscape:transform-center-x="27.78621"
+       inkscape:transform-center-y="-17.920253"
+       inkscape:export-filename="/home/mjumbewu/Programming/poepublic/shareabouts-miami-psc/src/ourmiami/static/css/images/finalist-star-hover.png"
+       inkscape:export-xdpi="6.1999998"
+       inkscape:export-ydpi="6.1999998" />
+  </g>
+</svg>

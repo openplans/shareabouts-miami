@@ -388,9 +388,6 @@ pages:
   - title: _(FAQ)
     slug: faq
     name: faq
-  - title: _(Finalists)
-    slug: finalists
-    name: finalists
   - title: _(Contact us)
     slug: contact
     name: features
@@ -424,6 +421,9 @@ pages:
       - title: _(Signage/Wayfinding)
         url: /filter/signagewayfinding
         external: true
+  - title: _(Finalists)
+    slug: finalists
+    name: finalists
 
 notifications:
   on_new_place: true
