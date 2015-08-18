@@ -257,7 +257,8 @@ form .signed-in-as {
 #current-filter-type.safestreets { color: #EF7300; }
 #current-filter-type.signagewayfinding { color: #DF4662; }
 
-.menu-item-finalists .btn.btn-block {
+.menu-item-finalists .btn.btn-block,
+.menu-item-winners .btn.btn-block {
   font-weight: bold;
 }
 
@@ -714,7 +715,8 @@ input[name="optout_reason"]:disabled {
     text-shadow: -0.25em -1px 0 #00aaff, -0.25em 1px 0 #00aaff, -0.375em 0 0 #fff;
   }
 
-  .menu-item-finalists .btn.btn-block {
+  .menu-item-finalists .btn.btn-block,
+  .menu-item-winners .btn.btn-block {
     background-image: url(/static/css/images/finalist-star.png);
     background-repeat: no-repeat;
     background-position: 5px 4px;
@@ -722,7 +724,8 @@ input[name="optout_reason"]:disabled {
     padding-left: 30px;
   }
 
-  .menu-item-finalists .btn:hover {
+  .menu-item-finalists .btn:hover,
+  .menu-item-winners .btn:hover {
     background-image: url(/static/css/images/finalist-star-hover.png);
   }
 
