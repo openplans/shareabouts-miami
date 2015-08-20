@@ -421,12 +421,12 @@ pages:
       - title: _(Signage/Wayfinding)
         url: /filter/signagewayfinding
         external: true
-  - title: _(Finalists)
-    slug: finalists
-    name: finalists
-  # - title: _(Winners)
-  #   slug: winners
-  #   name: winners
+  # - title: _(Finalists)
+  #   slug: finalists
+  #   name: finalists
+  - title: _(Winners)
+    slug: winners
+    name: winners
 
 notifications:
   on_new_place: true
